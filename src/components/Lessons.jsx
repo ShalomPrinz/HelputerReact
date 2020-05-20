@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ListGroup from "./common/ListGroup";
+import Search from "./common/Search";
 
 const lessons = {
   TextDesign: [
@@ -113,8 +114,11 @@ const lessons = {
 };
 
 function Lessons(props) {
+  const [query, setQuery] = useState("");
+
   return (
     <div>
+      <Search value={query} onChange={(q) => setQuery(q)} />
       {Object.entries(lessons).map(([subject, list]) => (
         <>
           <h1>{subject}</h1>
