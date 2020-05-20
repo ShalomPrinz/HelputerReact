@@ -4,7 +4,7 @@ import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
 import useWindowSize from "../hooks/useWindowSize";
 
-const lessons = {
+const lessonsLists = {
   TextDesign: [
     {
       id: 1,
@@ -114,10 +114,15 @@ const lessons = {
   ],
 };
 
-const getClassName = (width) =>
-  "col-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
+const getClassName = (width, prefix = "col") =>
+  prefix + "-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
 
-function Lessons(props) {
+const filterLessonsList = (list, query) =>
+  query === ""
+    ? list
+    : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
+
+function Lessons() {
   const [query, setQuery] = useState("");
   const size = useWindowSize();
 
@@ -127,12 +132,18 @@ function Lessons(props) {
         <Search value={query} onChange={(q) => setQuery(q)} />
       </div>
       <div className="row justify-content-center">
-        {Object.entries(lessons).map(([subject, list]) => (
-          <div className={getClassName(size[0])} key={subject}>
-            <h4>{subject}</h4>
-            <ListGroup items={list} />
-          </div>
-        ))}
+        {Object.entries(lessonsLists).map(([subject, list]) => {
+          const filtered = filterLessonsList(list, query);
+
+          if (filtered.length === 0) return null;
+
+          return (
+            <div className={getClassName(size[0])} key={subject}>
+              <h4>{subject}</h4>
+              <ListGroup items={filtered} />
+            </div>
+          );
+        })}
       </div>
     </>
   );
