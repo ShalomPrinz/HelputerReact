@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
+import useWindowSize from "../hooks/useWindowSize";
 
 const lessons = {
   TextDesign: [
@@ -113,8 +114,12 @@ const lessons = {
   ],
 };
 
+const getClassName = (width) =>
+  "col-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
+
 function Lessons(props) {
   const [query, setQuery] = useState("");
+  const size = useWindowSize();
 
   return (
     <>
@@ -123,8 +128,8 @@ function Lessons(props) {
       </div>
       <div className="row justify-content-center">
         {Object.entries(lessons).map(([subject, list]) => (
-          <div className="col-2">
-            <h3>{subject}</h3>
+          <div className={getClassName(size[0])}>
+            <h4>{subject}</h4>
             <ListGroup items={list} />
           </div>
         ))}
