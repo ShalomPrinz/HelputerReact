@@ -117,15 +117,19 @@ function Lessons(props) {
   const [query, setQuery] = useState("");
 
   return (
-    <div>
-      <Search value={query} onChange={(q) => setQuery(q)} />
-      {Object.entries(lessons).map(([subject, list]) => (
-        <>
-          <h1>{subject}</h1>
-          <ListGroup items={list} />
-        </>
-      ))}
-    </div>
+    <>
+      <div className="mx-auto w-50">
+        <Search value={query} onChange={(q) => setQuery(q)} />
+      </div>
+      <div className="row justify-content-center">
+        {Object.entries(lessons).map(([subject, list]) => (
+          <div className="col-2">
+            <h3>{subject}</h3>
+            <ListGroup items={list} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
