@@ -1,5 +1,7 @@
 import React from "react";
 
+import ListGroup from "./common/ListGroup";
+
 const lessons = {
   TextDesign: [
     {
@@ -112,18 +114,14 @@ const lessons = {
 
 function Lessons(props) {
   return (
-    <ul>
+    <div>
       {Object.entries(lessons).map(([subject, list]) => (
         <>
           <h1>{subject}</h1>
-          <ul>
-            {list.map((lesson) => (
-              <li key={lesson.id}>{lesson.name}</li>
-            ))}
-          </ul>
+          <ListGroup items={list} />
         </>
       ))}
-    </ul>
+    </div>
   );
 }
 
