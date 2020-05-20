@@ -142,7 +142,11 @@ function Lessons() {
           return (
             <div className={getClassName(size[0])} key={subject}>
               <h4>{subject}</h4>
-              <ListGroup items={filtered} />
+              <ListGroup
+                items={filtered}
+                onItemSelect={(id) => {}}
+                searching={query !== ""}
+              />
             </div>
           );
         })}
