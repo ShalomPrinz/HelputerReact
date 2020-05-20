@@ -1,18 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Popover from "react-bootstrap/Popover";
-import Button from "react-bootstrap/Button";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-
-const popover = (
-  <Popover id="popover-basic">
-    <Popover.Title as="h3">Popover right</Popover.Title>
-    <Popover.Content>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
-    </Popover.Content>
-  </Popover>
-);
+import Popover from "./Popover";
 
 class ListGroup extends Component {
   state = { selectedItemValue: "-1" };
@@ -46,13 +34,7 @@ class ListGroup extends Component {
               this.handleItemSelect(item[valueProperty], onItemSelect)
             }
           >
-            <OverlayTrigger
-              trigger="hover"
-              placement="bottom"
-              overlay={popover}
-            >
-              <Button variant="">{item[textProperty]}</Button>
-            </OverlayTrigger>
+            <Popover text={item[textProperty]} />
           </li>
         ))}
       </ul>
