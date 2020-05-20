@@ -128,7 +128,7 @@ function Lessons(props) {
       </div>
       <div className="row justify-content-center">
         {Object.entries(lessons).map(([subject, list]) => (
-          <div className={getClassName(size[0])}>
+          <div className={getClassName(size[0])} key={subject}>
             <h4>{subject}</h4>
             <ListGroup items={list} />
           </div>

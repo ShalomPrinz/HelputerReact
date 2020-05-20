@@ -43,7 +43,7 @@ class ListGroup extends Component {
 
 ListGroup.defaultProps = {
   textProperty: "name",
-  valueProperty: "_id",
+  valueProperty: "id",
   searching: false,
 };
 
