@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 function App() {
-  return <div>Helputer</div>;
+  return <NavBar />;
 }
 
 export default App;
