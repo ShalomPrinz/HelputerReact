@@ -125,6 +125,7 @@ const filterLessonsList = (list, query) =>
 function Lessons() {
   const [query, setQuery] = useState("");
   const size = useWindowSize();
+  let foundLessons = false;
 
   return (
     <>
@@ -136,6 +137,7 @@ function Lessons() {
           const filtered = filterLessonsList(list, query);
 
           if (filtered.length === 0) return null;
+          foundLessons = true;
 
           return (
             <div className={getClassName(size[0])} key={subject}>
@@ -144,6 +146,7 @@ function Lessons() {
             </div>
           );
         })}
+        {!foundLessons && <p>No lessons found matching your query.</p>}
       </div>
     </>
   );
