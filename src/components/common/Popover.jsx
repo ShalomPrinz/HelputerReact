@@ -2,11 +2,13 @@ import React from "react";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
-function AppPopover({ text, title, description = text }) {
+function AppPopover({ item }) {
+  const { name, type } = item;
+
   const overlay = (
     <Popover id="popover-basic">
-      <Popover.Title as="h3">{title}</Popover.Title>
-      <Popover.Content>{description}</Popover.Content>
+      {/* <Popover.Title as="h3">{title}</Popover.Title> */}
+      <Popover.Content>{name}</Popover.Content>
     </Popover>
   );
 
@@ -16,7 +18,9 @@ function AppPopover({ text, title, description = text }) {
       placement="bottom"
       overlay={overlay}
     >
-      <div className="text-center">{text}</div>
+      <div className="text-center" data-name={name} data-type={type}>
+        {name}
+      </div>
     </OverlayTrigger>
   );
 }

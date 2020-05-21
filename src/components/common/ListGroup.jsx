@@ -34,7 +34,7 @@ class ListGroup extends Component {
               this.handleItemSelect(item[valueProperty], onItemSelect)
             }
           >
-            <Popover text={item[textProperty]} />
+            <Popover item={item} />
           </li>
         ))}
       </ul>
