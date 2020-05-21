@@ -1,6 +1,5 @@
 import React from "react";
 import Popover from "react-bootstrap/Popover";
-import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 function AppPopover({ text, title, description = text }) {
@@ -17,7 +16,7 @@ function AppPopover({ text, title, description = text }) {
       placement="bottom"
       overlay={overlay}
     >
-      <Button variant="secondary">{text}</Button>
+      <div className="text-center">{text}</div>
     </OverlayTrigger>
   );
 }
