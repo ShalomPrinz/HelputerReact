@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
 import useWindowSize from "../hooks/useWindowSize";
+import http from "../services/httpService";
 
 const lessonsLists = {
   TextDesign: [
@@ -123,7 +123,7 @@ const filterLessonsList = (list, query) =>
     ? list
     : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
 
-const paint = (params) => axios.get("http://localhost:8000", { params });
+const paint = (params) => http.get("http://localhost:8000", { params });
 
 function Lessons() {
   const [query, setQuery] = useState("");
