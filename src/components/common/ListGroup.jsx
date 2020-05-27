@@ -5,9 +5,9 @@ import Popover from "./Popover";
 class ListGroup extends Component {
   state = { selectedItemValue: "-1" };
 
-  handleItemSelect = (selectedItemValue, onItemSelect) => {
+  handleItemSelect = (selectedItem, selectedItemValue, onItemSelect) => {
     this.setState({ selectedItemValue });
-    onItemSelect(selectedItemValue);
+    onItemSelect(selectedItem);
   };
 
   getClassName = (value, searching) =>
@@ -31,7 +31,7 @@ class ListGroup extends Component {
             key={item[valueProperty]}
             className={this.getClassName(item[valueProperty], searching)}
             onClick={() =>
-              this.handleItemSelect(item[valueProperty], onItemSelect)
+              this.handleItemSelect(item, item[valueProperty], onItemSelect)
             }
           >
             <Popover item={item} />

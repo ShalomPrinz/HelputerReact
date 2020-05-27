@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
@@ -122,6 +123,8 @@ const filterLessonsList = (list, query) =>
     ? list
     : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
 
+const paint = (params) => axios.get("http://localhost:8000", { params });
+
 function Lessons() {
   const [query, setQuery] = useState("");
   const size = useWindowSize();
@@ -144,7 +147,9 @@ function Lessons() {
               <h4>{subject}</h4>
               <ListGroup
                 items={filtered}
-                onItemSelect={(id) => {}}
+                onItemSelect={({ name, type }) =>
+                  paint({ name: encodeURIComponent(name), type })
+                }
                 searching={query !== ""}
               />
             </div>
