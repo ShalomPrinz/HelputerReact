@@ -147,8 +147,8 @@ function Lessons() {
               <h4>{subject}</h4>
               <ListGroup
                 items={filtered}
-                onItemSelect={({ name, type }) =>
-                  paint({ name: encodeURIComponent(name), type })
+                onItemSelect={({ name, type, regex = name }) =>
+                  paint({ name: encodeURIComponent(regex), type })
                 }
                 searching={query !== ""}
               />
