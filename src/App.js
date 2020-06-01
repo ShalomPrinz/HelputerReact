@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Lessons from "./components/Lessons";
+import { headUrl, lessonsUrl, notFoundUrl } from "./constants";
 
 function App() {
   return (
@@ -12,13 +13,12 @@ function App() {
       <main className="container">
         <div className="content">
           <Switch>
-            <Route path="/lessons" component={Lessons} />
-            <Redirect from="/" exact to="/lessons" />
-            <Redirect to="/not-found" />
+            <Route path={lessonsUrl} component={Lessons} />
+            <Redirect from={headUrl} exact to={lessonsUrl} />
+            <Redirect to={notFoundUrl} />
           </Switch>
         </div>
       </main>
-      <Lessons />
     </>
   );
 }

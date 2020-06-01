@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import { headUrl, lessonsUrl } from "../constants";
+
 function NavBar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to={"homepage component url"}>
+      <Link className="navbar-brand" to={headUrl}>
         Helputer
       </Link>
       <button
@@ -21,7 +23,7 @@ function NavBar(props) {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink className="nav-link" to={"lessons component url"}>
+            <NavLink className="nav-link" to={lessonsUrl}>
               Lessons
             </NavLink>
           </li>
