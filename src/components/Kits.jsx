@@ -24,7 +24,10 @@ function Kits({ lists, onItemSelect }) {
       </div>
       <div className="row justify-content-center">
         {Object.entries(lists).map(([subject, list]) => {
-          const filteredList = filterList(list, query);
+          const [items, description] =
+            typeof list[1] === "string" ? list : [list];
+
+          const filteredList = filterList(items, query);
 
           if (filteredList.length === 0) return null;
           found = true;
@@ -33,6 +36,7 @@ function Kits({ lists, onItemSelect }) {
             <div className={getClassName(size[0])} key={subject}>
               <h4>{subject}</h4>
               <ListGroup
+                description={description}
                 items={filteredList}
                 onItemSelect={onItemSelect}
                 searching={query !== ""}

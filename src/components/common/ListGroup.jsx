@@ -21,11 +21,13 @@ class ListGroup extends Component {
       valueProperty,
       onItemSelect,
       items,
+      description,
       searching,
     } = this.props;
 
     return (
       <ul className="list-group">
+        {description && <div className="text-center mb-2">{description}</div>}
         {items.map((item) => (
           <li
             key={item[valueProperty]}

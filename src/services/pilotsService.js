@@ -16,7 +16,10 @@ const convertPilot = (target) => {
 };
 
 references.forEach((ref) => {
-  pilots[ref.title] = ref.lessons.map((l) => convertPilot(l));
+  pilots[ref.title] = [
+    ref.lessons.map((l) => convertPilot(l)),
+    ref.description,
+  ];
 });
 
 export default pilots;
