@@ -3,6 +3,13 @@ import React, { useState } from "react";
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
 import useWindowSize from "../hooks/useWindowSize";
+import http from "../services/httpService";
+import { remoteUrl } from "../constants";
+
+const paint = (params) => http.get(remoteUrl, { params });
+
+const default_onItemSelect = ({ name, type, regex = name }) =>
+  paint({ name: encodeURIComponent(regex), type });
 
 const getClassName = (width, prefix = "col") =>
   prefix + "-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
@@ -12,7 +19,7 @@ const filterList = (list, query) =>
     ? list
     : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
 
-function Kits({ lists, onItemSelect }) {
+function Kits({ lists, onItemSelect = default_onItemSelect }) {
   const [query, setQuery] = useState("");
   const size = useWindowSize();
   let found = false;
