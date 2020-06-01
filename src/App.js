@@ -7,12 +7,14 @@ import Lessons from "./components/Lessons";
 import NotFound from "./components/NotFound";
 import Hotkeys from "./components/Hotkeys";
 import Autopilots from "./components/Autopilots";
+import Pilot from "./components/Pilot";
 import {
   headUrl,
   lessonsUrl,
   notFoundUrl,
   hotkeysUrl,
   autopilotsUrl,
+  autopilotUrl,
 } from "./constants";
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
           <Switch>
             <Route path={lessonsUrl} component={Lessons} />
             <Route path={hotkeysUrl} component={Hotkeys} />
+            <Route path={autopilotUrl} component={Pilot} />
             <Route path={autopilotsUrl} component={Autopilots} />
             <Route path={notFoundUrl} component={NotFound} />
             <Redirect from={headUrl} exact to={lessonsUrl} />
