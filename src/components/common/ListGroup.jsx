@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Popover from "./Popover";
+import { Link } from "react-router-dom";
 
 class ListGroup extends Component {
   state = { selectedItemValue: "-1" };
@@ -22,12 +23,20 @@ class ListGroup extends Component {
       onItemSelect,
       items,
       description,
+      onKitSelectUrl,
       searching,
     } = this.props;
 
     return (
       <ul className="list-group">
-        {description && <div className="text-center mb-2">{description}</div>}
+        {description && (
+          <Link
+            className="text-center mb-2 text-dark text-decoration-none"
+            to={onKitSelectUrl}
+          >
+            {description}
+          </Link>
+        )}
         {items.map((item) => (
           <li
             key={item[valueProperty]}

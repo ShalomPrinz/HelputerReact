@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
+import { Link } from "react-router-dom";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
@@ -19,7 +20,7 @@ const filterList = (list, query) =>
     ? list
     : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
 
-function Kits({ lists, onItemSelect = default_onItemSelect }) {
+function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
   const [query, setQuery] = useState("");
   const size = useWindowSize();
   let found = false;
@@ -41,11 +42,21 @@ function Kits({ lists, onItemSelect = default_onItemSelect }) {
 
           return (
             <div className={getClassName(size[0])} key={subject}>
-              <h4>{subject}</h4>
+              {onKitSelectUrl ? (
+                <Link
+                  className="navbar-brand text-dark text-decoration-none"
+                  to={onKitSelectUrl}
+                >
+                  <h4>{subject}</h4>
+                </Link>
+              ) : (
+                <h4>{subject}</h4>
+              )}
               <ListGroup
                 description={description}
                 items={filteredList}
                 onItemSelect={onItemSelect}
+                onKitSelectUrl={onKitSelectUrl}
                 searching={query !== ""}
               />
             </div>
