@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Popover from "./Popover";
 import { Link } from "react-router-dom";
+import ConditionalLink from "./ConditionalLink";
 
 class ListGroup extends Component {
   state = { selectedItemValue: "-1" };
@@ -29,14 +30,11 @@ class ListGroup extends Component {
 
     return (
       <ul className="list-group">
-        {description && (
-          <Link
-            className="text-center mb-2 text-dark text-decoration-none"
-            to={onKitSelectUrl}
-          >
-            {description}
-          </Link>
-        )}
+        <ConditionalLink
+          className="mb-3"
+          text={description}
+          to={onKitSelectUrl}
+        />
         {items.map((item) => (
           <li
             key={item[valueProperty]}

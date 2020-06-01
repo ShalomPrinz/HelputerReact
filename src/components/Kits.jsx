@@ -6,6 +6,7 @@ import Search from "./common/Search";
 import useWindowSize from "../hooks/useWindowSize";
 import http from "../services/httpService";
 import { remoteUrl } from "../constants";
+import ConditionalLink from "./common/ConditionalLink";
 
 const paint = (params) => http.get(remoteUrl, { params });
 
@@ -42,16 +43,7 @@ function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
 
           return (
             <div className={getClassName(size[0])} key={subject}>
-              {onKitSelectUrl ? (
-                <Link
-                  className="navbar-brand text-dark text-decoration-none"
-                  to={onKitSelectUrl}
-                >
-                  <h4>{subject}</h4>
-                </Link>
-              ) : (
-                <h4>{subject}</h4>
-              )}
+              <ConditionalLink headline text={subject} to={onKitSelectUrl} />
               <ListGroup
                 description={description}
                 items={filteredList}
