@@ -109,6 +109,6 @@ const lessonsLists = {
 };
 
 export const getLesson = (topic, id) =>
-  lessonsLists[topic].filter((l) => l.id === id);
+  lessonsLists[topic].find((l) => l.id === id);
 
 export default lessonsLists;
