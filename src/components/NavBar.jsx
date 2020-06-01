@@ -1,11 +1,12 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function NavBar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" to={"homepage component url"}>
+      <Link className="navbar-brand" to={"homepage component url"}>
         Helputer
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -20,19 +21,19 @@ function NavBar(props) {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" to={"lessons component url"}>
+            <NavLink className="nav-link" to={"lessons component url"}>
               Lessons
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" to={"hotkeys component url"}>
+            <NavLink className="nav-link" to={"hotkeys component url"}>
               Hotkeys
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" to={"autopilots component url"}>
+            <NavLink className="nav-link" to={"autopilots component url"}>
               Autopilots
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
