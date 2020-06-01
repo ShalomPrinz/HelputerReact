@@ -1,7 +1,10 @@
 import React from "react";
 
-const Autopilots = () => {
-  return <h1>Auto pilots</h1>;
-};
+import pilots from "../services/pilotsService";
+import Kits from "./Kits";
 
-export default Autopilots;
+function Lessons() {
+  return <Kits lists={pilots} />;
+}
+
+export default Lessons;
