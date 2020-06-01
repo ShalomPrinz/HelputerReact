@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import { headUrl, lessonsUrl } from "../constants";
+import { headUrl, lessonsUrl, hotkeysUrl, autopilotsUrl } from "../constants";
 
 function NavBar(props) {
   return (
@@ -28,12 +28,12 @@ function NavBar(props) {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to={"hotkeys component url"}>
+            <NavLink className="nav-link" to={hotkeysUrl}>
               Hotkeys
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to={"autopilots component url"}>
+            <NavLink className="nav-link" to={autopilotsUrl}>
               Autopilots
             </NavLink>
           </li>

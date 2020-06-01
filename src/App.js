@@ -4,7 +4,16 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Lessons from "./components/Lessons";
-import { headUrl, lessonsUrl, notFoundUrl } from "./constants";
+import NotFound from "./components/NotFound";
+import Hotkeys from "./components/Hotkeys";
+import Autopilots from "./components/Autopilots";
+import {
+  headUrl,
+  lessonsUrl,
+  notFoundUrl,
+  hotkeysUrl,
+  autopilotsUrl,
+} from "./constants";
 
 function App() {
   return (
@@ -14,6 +23,9 @@ function App() {
         <div className="content">
           <Switch>
             <Route path={lessonsUrl} component={Lessons} />
+            <Route path={hotkeysUrl} component={Hotkeys} />
+            <Route path={autopilotsUrl} component={Autopilots} />
+            <Route path={notFoundUrl} component={NotFound} />
             <Redirect from={headUrl} exact to={lessonsUrl} />
             <Redirect to={notFoundUrl} />
           </Switch>
