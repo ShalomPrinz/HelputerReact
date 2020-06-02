@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Popover from "./Popover";
 import { Link } from "react-router-dom";
 import ConditionalLink from "./ConditionalLink";
+import ListItem from "./ListItem";
 
 class ListGroup extends Component {
   state = { selectedItemValue: "-1" };
@@ -36,15 +37,14 @@ class ListGroup extends Component {
           to={onKitSelectUrl}
         />
         {items.map((item) => (
-          <li
-            key={item[valueProperty]}
+          <ListItem
             className={this.getClassName(item[valueProperty], searching)}
-            onClick={() =>
+            handleSelect={() =>
               this.handleItemSelect(item, item[valueProperty], onItemSelect)
             }
-          >
-            <Popover item={item} />
-          </li>
+            item={item}
+            key={item[valueProperty]}
+          />
         ))}
       </ul>
     );
