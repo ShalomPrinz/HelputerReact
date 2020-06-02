@@ -6,25 +6,56 @@ import ListItem from "./common/ListItem";
 
 function Pilot(props) {
   const [progress, setProgress] = useState(0);
+  let [index, setIndex] = useState(0);
+
   const { subject } = props.match.params;
   const [lessons, description] = pilotsService[subject];
 
-  const firstLesson = lessons[0];
+  const firstIndex = 0;
+  const lastIndex = lessons.length - 1;
+
+  const increaseIndex = () => setIndex(index + 1);
+  const decreaseIndex = () => setIndex(index - 1);
+
+  const handleNext = () => {
+    if (index < lastIndex) increaseIndex();
+  };
+
+  const handlePrevious = () => {
+    if (index > 0) decreaseIndex();
+  };
+
+  const currentLesson = lessons[index];
 
   return (
     <div className="col">
-      <div className="row h1 justify-content-center">{subject}</div>
+      <div className="row mt-4 h1 justify-content-center">{subject}</div>
       <div className="row justify-content-center text-center">
         {description}
       </div>
       <ProgressBar progress={progress} />
       <ListItem
         autolist
-        className="my-5"
-        item={firstLesson}
-        key={firstLesson.id}
+        className="mx-auto my-5"
+        item={currentLesson}
+        key={currentLesson.id}
       />
-      <div className="row h1 justify-content-center ">Next --- Previous</div>
+      <div className="row h1 justify-content-center">
+        <button
+          className="col-3 mx-2 btn btn-lg btn-primary"
+          disabled={index === lastIndex}
+          onClick={handleNext}
+        >
+          Next
+        </button>
+        <button
+          className="col-3 mx-2 btn btn-lg btn-primary"
+          disabled={index === firstIndex}
+          onClick={handlePrevious}
+        >
+          Previous
+        </button>
+      </div>
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
           <ListItem item={l} key={l.id} />
