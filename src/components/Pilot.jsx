@@ -18,9 +18,7 @@ function Pilot(props) {
         {description}
       </div>
       <ProgressBar progress={progress} />
-      <ul className="list-group">
-        <ListItem item={firstLesson} key={firstLesson.id} />
-      </ul>
+      <ListItem autolist item={firstLesson} key={firstLesson.id} />
       <div className="row h1 justify-content-center ">Next --- Previous</div>
     </div>
   );
