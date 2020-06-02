@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import Popover from "./Popover";
 
-function ListItem({
-  autolist,
-  className = "",
-  handleSelect = () => {},
-  item,
-  selected,
-}) {
+function ListItem({ autolist, className = "", handleSelect, item, selected }) {
   const [active, setActive] = useState(false);
   const current = selected && !active ? "bg-info text-white" : "";
 
@@ -23,8 +17,8 @@ function ListItem({
   };
 
   const onClick = () => {
-    activate();
-    handleSelect();
+    if (typeof handleSelect !== "function") activate();
+    else handleSelect();
   };
 
   const li = (

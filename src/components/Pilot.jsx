@@ -26,6 +26,11 @@ function Pilot(props) {
     if (index > 0) decreaseIndex();
   };
 
+  const handleSelect = (lesson) => {
+    const index = lessons.findIndex((l) => l.id === lesson.id);
+    setIndex(index);
+  };
+
   const currentLesson = lessons[index];
   const selectedId = currentLesson.id;
 
@@ -47,7 +52,12 @@ function Pilot(props) {
       </div>
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
-          <ListItem item={l} key={l.id} selected={l.id === selectedId} />
+          <ListItem
+            item={l}
+            handleSelect={() => handleSelect(l)}
+            key={l.id}
+            selected={l.id === selectedId}
+          />
         ))}
       </ul>
     </div>
