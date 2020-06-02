@@ -41,14 +41,16 @@ function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
           if (filteredList.length === 0) return null;
           found = true;
 
+          const kitUrl = onKitSelectUrl + "/" + subject;
+
           return (
             <div className={getClassName(size[0])} key={subject}>
-              <ConditionalLink headline text={subject} to={onKitSelectUrl} />
+              <ConditionalLink headline text={subject} to={kitUrl} />
               <ListGroup
                 description={description}
                 items={filteredList}
                 onItemSelect={onItemSelect}
-                onKitSelectUrl={onKitSelectUrl}
+                onKitSelectUrl={kitUrl}
                 searching={query !== ""}
               />
             </div>

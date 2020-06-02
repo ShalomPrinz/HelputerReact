@@ -26,7 +26,7 @@ function App() {
           <Switch>
             <Route path={lessonsUrl} component={Lessons} />
             <Route path={hotkeysUrl} component={Hotkeys} />
-            <Route path={autopilotUrl} component={Pilot} />
+            <Route path={autopilotUrl + "/:subject"} component={Pilot} />
             <Route path={autopilotsUrl} component={Autopilots} />
             <Route path={notFoundUrl} component={NotFound} />
             <Redirect from={headUrl} exact to={lessonsUrl} />
