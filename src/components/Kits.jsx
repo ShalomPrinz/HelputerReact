@@ -1,5 +1,4 @@
-import React, { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
@@ -41,7 +40,9 @@ function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
           if (filteredList.length === 0) return null;
           found = true;
 
-          const kitUrl = onKitSelectUrl + "/" + subject;
+          const kitUrl = onKitSelectUrl
+            ? onKitSelectUrl + "/" + subject
+            : false;
 
           return (
             <div className={getClassName(size[0])} key={subject}>
