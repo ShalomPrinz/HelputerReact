@@ -1,19 +1,27 @@
 import React, { useState } from "react";
-import ProgressBar from "./common/ProgressBar";
 
-const row = "row h1 justify-content-center";
+import pilotsService from "../services/pilotsService";
+import ProgressBar from "./common/ProgressBar";
+import ListItem from "./common/ListItem";
 
 function Pilot(props) {
   const [progress, setProgress] = useState(0);
   const { subject } = props.match.params;
+  const [lessons, description] = pilotsService[subject];
 
+  const firstLesson = lessons[0];
+  console.log("lessons", lessons);
   return (
     <div className="col">
-      <div className={row}>{subject}</div>
+      <div className="row h1 justify-content-center">{subject}</div>
+      <div className="row justify-content-center text-center">
+        {description}
+      </div>
       <ProgressBar progress={progress} />
-      <div className={row}>Now running</div>
-      <div className={row}>All lessons in this pilot</div>
-      <div className={row}>Next --- Previous</div>
+      <ul className="list-group">
+        <ListItem item={firstLesson} key={firstLesson.id} />
+      </ul>
+      <div className="row h1 justify-content-center ">Next --- Previous</div>
     </div>
   );
 }
