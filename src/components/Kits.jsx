@@ -4,13 +4,10 @@ import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
 import useWindowSize from "../hooks/useWindowSize";
 import http from "../services/httpService";
-import { remoteUrl } from "../constants";
 import ConditionalLink from "./common/ConditionalLink";
 
-const paint = (params) => http.get(remoteUrl, { params });
-
 const default_onItemSelect = ({ name, type, regex = name }) =>
-  paint({ name: encodeURIComponent(regex), type });
+  http.paint({ name: encodeURIComponent(regex), type });
 
 const getClassName = (width, prefix = "col") =>
   prefix + "-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
