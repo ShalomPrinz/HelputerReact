@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import pilotsService from "../services/pilotsService";
+import http from "../services/httpService";
 import ProgressBar from "./common/ProgressBar";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
@@ -41,7 +42,12 @@ function Pilot(props) {
         {description}
       </div>
       <ProgressBar progress={progress} />
-      <ListItem autolist className="mx-auto my-5" item={currentLesson} />
+      <ListItem
+        autolist
+        className="mx-auto my-5"
+        handleSelect={() => http.paint(currentLesson)}
+        item={currentLesson}
+      />
       <div className="row justify-content-center">
         <Button disabled={index === lastIndex} onClick={handleNext}>
           Next
@@ -53,8 +59,8 @@ function Pilot(props) {
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
           <ListItem
-            item={l}
             handleSelect={() => handleSelect(l)}
+            item={l}
             key={l.id}
             selected={l.id === selectedId}
           />
