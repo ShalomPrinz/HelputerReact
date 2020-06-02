@@ -1,10 +1,9 @@
 import React from "react";
 import Popover from "./Popover";
 
-function ListItem({ autolist, className = "", handleSelect, item, key }) {
+function ListItem({ autolist, className = "", handleSelect, item }) {
   const li = (
     <li
-      key={key}
       className={`list-group-item clickable ${className}`}
       onClick={handleSelect}
     >

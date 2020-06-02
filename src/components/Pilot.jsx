@@ -35,12 +35,7 @@ function Pilot(props) {
         {description}
       </div>
       <ProgressBar progress={progress} />
-      <ListItem
-        autolist
-        className="mx-auto my-5"
-        item={currentLesson}
-        key={currentLesson.id}
-      />
+      <ListItem autolist className="mx-auto my-5" item={currentLesson} />
       <div className="row justify-content-center">
         <Button disabled={index === lastIndex} onClick={handleNext}>
           Next
