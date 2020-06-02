@@ -6,8 +6,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import http from "../services/httpService";
 import ConditionalLink from "./common/ConditionalLink";
 
-const default_onItemSelect = ({ name, type, regex = name }) =>
-  http.paint({ name: encodeURIComponent(regex), type });
+const default_onItemSelect = (item) => http.paint(item);
 
 const getClassName = (width, prefix = "col") =>
   prefix + "-" + (width > 800 ? "2" : width > 500 ? "5" : "8");
