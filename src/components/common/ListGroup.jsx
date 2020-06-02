@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Popover from "./Popover";
-import { Link } from "react-router-dom";
 import ConditionalLink from "./ConditionalLink";
 import ListItem from "./ListItem";
 
@@ -13,10 +11,8 @@ class ListGroup extends Component {
     onItemSelect(selectedItem);
   };
 
-  getClassName = (value, searching) =>
-    value === this.state.selectedItemValue && !searching
-      ? "list-group-item clickable active"
-      : "list-group-item clickable";
+  isActiveSelection = (value, searching) =>
+    value === this.state.selectedItemValue && !searching;
 
   render() {
     const {
@@ -38,7 +34,11 @@ class ListGroup extends Component {
         />
         {items.map((item) => (
           <ListItem
-            className={this.getClassName(item[valueProperty], searching)}
+            className={
+              this.isActiveSelection(item[valueProperty], searching)
+                ? "active"
+                : ""
+            }
             handleSelect={() =>
               this.handleItemSelect(item, item[valueProperty], onItemSelect)
             }
