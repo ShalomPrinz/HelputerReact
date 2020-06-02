@@ -10,7 +10,7 @@ function Pilot(props) {
   const [lessons, description] = pilotsService[subject];
 
   const firstLesson = lessons[0];
-  console.log("lessons", lessons);
+
   return (
     <div className="col">
       <div className="row h1 justify-content-center">{subject}</div>
@@ -18,8 +18,18 @@ function Pilot(props) {
         {description}
       </div>
       <ProgressBar progress={progress} />
-      <ListItem autolist item={firstLesson} key={firstLesson.id} />
+      <ListItem
+        autolist
+        className="my-5"
+        item={firstLesson}
+        key={firstLesson.id}
+      />
       <div className="row h1 justify-content-center ">Next --- Previous</div>
+      <ul className="mt-3 list-group list-group-horizontal justify-content-center">
+        {lessons.map((l) => (
+          <ListItem item={l} key={l.id} />
+        ))}
+      </ul>
     </div>
   );
 }
