@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import Popover from "./Popover";
 
-function ListItem({ autolist, className = "", handleSelect = () => {}, item }) {
+function ListItem({
+  autolist,
+  className = "",
+  handleSelect = () => {},
+  item,
+  selected,
+}) {
   const [active, setActive] = useState(false);
+  const current = selected && !active ? "bg-info text-white" : "";
 
   const changeActive = (isActive) => {
-    const updatedActive = isActive ? false : " active";
+    const updatedActive = isActive ? false : "active";
     setActive(updatedActive);
     return updatedActive;
   };
@@ -22,7 +29,7 @@ function ListItem({ autolist, className = "", handleSelect = () => {}, item }) {
 
   const li = (
     <li
-      className={`list-group-item clickable ${active} ${className}`}
+      className={`list-group-item clickable ${current} ${active} ${className}`}
       onClick={onClick}
     >
       <Popover item={item} />

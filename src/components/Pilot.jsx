@@ -27,6 +27,7 @@ function Pilot(props) {
   };
 
   const currentLesson = lessons[index];
+  const selectedId = currentLesson.id;
 
   return (
     <div className="col">
@@ -46,7 +47,7 @@ function Pilot(props) {
       </div>
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
-          <ListItem item={l} key={l.id} />
+          <ListItem item={l} key={l.id} selected={l.id === selectedId} />
         ))}
       </ul>
     </div>
