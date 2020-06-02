@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import pilotsService from "../services/pilotsService";
 import ProgressBar from "./common/ProgressBar";
 import ListItem from "./common/ListItem";
+import Button from "./common/Button";
 
 function Pilot(props) {
   const [progress, setProgress] = useState(0);
@@ -40,21 +41,13 @@ function Pilot(props) {
         item={currentLesson}
         key={currentLesson.id}
       />
-      <div className="row h1 justify-content-center">
-        <button
-          className="col-3 mx-2 btn btn-lg btn-primary"
-          disabled={index === lastIndex}
-          onClick={handleNext}
-        >
+      <div className="row justify-content-center">
+        <Button disabled={index === lastIndex} onClick={handleNext}>
           Next
-        </button>
-        <button
-          className="col-3 mx-2 btn btn-lg btn-primary"
-          disabled={index === firstIndex}
-          onClick={handlePrevious}
-        >
+        </Button>
+        <Button disabled={index === firstIndex} onClick={handlePrevious}>
           Previous
-        </button>
+        </Button>
       </div>
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
