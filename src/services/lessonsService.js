@@ -111,4 +111,6 @@ const lessonsLists = {
 export const getLesson = (topic, id) =>
   lessonsLists[topic].find((l) => l.id === id);
 
+export const lessonFinished = (lesson) => (lesson.finished = true);
+
 export default lessonsLists;

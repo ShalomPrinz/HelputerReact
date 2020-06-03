@@ -1,32 +1,31 @@
 import React, { useState } from "react";
 
-import pilotsService from "../services/pilotsService";
+import pilotsService, { finished } from "../services/pilotsService";
 import http from "../services/httpService";
 import ProgressBar from "./common/ProgressBar";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
 
 function Pilot(props) {
-  const [progress, setProgress] = useState(0);
-  let [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   const { subject } = props.match.params;
-  const [lessons, description] = pilotsService[subject];
+  const [lessons, description, progress] = pilotsService[subject];
   const size = lessons.length;
 
   const firstIndex = 0;
   const lastIndex = size - 1;
-  const step = 100 / size;
 
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
 
-  const increaseProgress = () => setProgress(progress + step);
+  const increaseProgress = (lesson) => {
+    if (!lesson.finished) finished(subject, lesson);
+  };
 
   const handleNext = () => {
     if (index < lastIndex) increaseIndex();
-
-    increaseProgress();
+    increaseProgress(currentLesson);
   };
 
   const handlePrevious = () => {
