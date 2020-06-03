@@ -12,15 +12,21 @@ function Pilot(props) {
 
   const { subject } = props.match.params;
   const [lessons, description] = pilotsService[subject];
+  const size = lessons.length;
 
   const firstIndex = 0;
-  const lastIndex = lessons.length - 1;
+  const lastIndex = size - 1;
+  const step = 100 / size;
 
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
 
+  const increaseProgress = () => setProgress(progress + step);
+
   const handleNext = () => {
     if (index < lastIndex) increaseIndex();
+
+    increaseProgress();
   };
 
   const handlePrevious = () => {
@@ -41,7 +47,7 @@ function Pilot(props) {
       <div className="row justify-content-center text-center">
         {description}
       </div>
-      <ProgressBar progress={progress} />
+      <ProgressBar progress={Math.round(progress)} />
       <ListItem
         autolist
         className="mx-auto my-5"
