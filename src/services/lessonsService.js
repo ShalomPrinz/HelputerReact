@@ -74,8 +74,8 @@ const lessonsLists = {
     },
     {
       id: 8,
-      name: "בטל הקלדה",
-      regex: "אין אפשרות לבטל|בטל הקלדה",
+      name: "בטל",
+      regex: "^בטל|אין אפשרות לבטל",
       type: "SplitButton",
     },
   ],
