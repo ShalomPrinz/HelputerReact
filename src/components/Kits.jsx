@@ -53,6 +53,7 @@ function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
               <ListGroup
                 description={description}
                 items={filteredList}
+                marginTop={pilot ? 0 : undefined}
                 onItemSelect={onItemSelect}
                 onKitSelectUrl={kitUrl}
                 searching={query !== ""}

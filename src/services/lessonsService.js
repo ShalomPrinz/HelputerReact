@@ -1,5 +1,5 @@
 const lessonsLists = {
-  TextDesign: [
+  "עיצוב טקסט": [
     {
       id: 1,
       name: "גודל גופן",
@@ -36,7 +36,7 @@ const lessonsLists = {
       type: "SplitButton",
     },
   ],
-  PageBasics: [
+  "פעולות בסיסיות": [
     {
       id: 1,
       name: "ישר לימין",
@@ -79,7 +79,7 @@ const lessonsLists = {
       type: "SplitButton",
     },
   ],
-  BasicDesign: [
+  "עיצוב בצבע": [
     {
       id: 1,
       name: "צבע גופן",
@@ -108,8 +108,14 @@ const lessonsLists = {
   ],
 };
 
+const topicDictionary = {
+  TextDesign: "עיצוב טקסט",
+  PageBasics: "פעולות בסיסיות",
+  BasicDesign: "עיצוב בצבע",
+};
+
 export const getLesson = (topic, id) =>
-  lessonsLists[topic].find((l) => l.id === id);
+  lessonsLists[topicDictionary[topic]].find((l) => l.id === id);
 
 export const lessonFinished = (lesson) => (lesson.finished = true);
 

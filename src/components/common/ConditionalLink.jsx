@@ -8,14 +8,13 @@ function ConditionalLink({
   to,
   condition = to,
 }) {
-  const TextComponent = headline ? <h4>{text}</h4> : text;
+  const style = `text-center text-dark text-decoration-none ${className}`;
+
+  const TextComponent = headline ? <h4 className={style}>{text}</h4> : text;
 
   if (condition)
     return (
-      <Link
-        className={`text-center text-dark text-decoration-none ${className}`}
-        to={to}
-      >
+      <Link className={style} to={to}>
         {TextComponent}
       </Link>
     );

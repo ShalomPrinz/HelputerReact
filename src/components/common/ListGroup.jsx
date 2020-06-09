@@ -16,19 +16,20 @@ class ListGroup extends Component {
 
   render() {
     const {
-      textProperty,
       valueProperty,
       onItemSelect,
       items,
       description,
+      marginBottom = 3,
+      marginTop = 3,
       onKitSelectUrl,
       searching,
     } = this.props;
 
     return (
-      <ul className="list-group">
+      <ul className={`list-group mb-${marginBottom} mt-${marginTop}`}>
         <ConditionalLink
-          className="mb-3"
+          className="mb-2 mt-1"
           text={description}
           to={onKitSelectUrl}
         />
