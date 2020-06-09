@@ -1,7 +1,9 @@
 import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
-function AppProgressBar({ progress }) {
+function AppProgressBar({ progress, undesigned }) {
+  if (undesigned) return <ProgressBar now={progress} />;
+
   if (progress === 0)
     return (
       <ProgressBar

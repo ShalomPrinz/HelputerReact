@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 import ListGroup from "./common/ListGroup";
 import Search from "./common/Search";
+import ConditionalLink from "./common/ConditionalLink";
+import ProgressBar from "./common/ProgressBar";
 import useWindowSize from "../hooks/useWindowSize";
 import http from "../services/httpService";
-import ConditionalLink from "./common/ConditionalLink";
+import pilots from "../services/pilotsService";
 
 const default_onItemSelect = (item) => http.paint(item);
 
@@ -40,9 +42,14 @@ function Kits({ lists, onItemSelect = default_onItemSelect, onKitSelectUrl }) {
             ? onKitSelectUrl + "/" + subject
             : false;
 
+          const pilot = pilots[subject];
+
           return (
             <div className={getClassName(size[0])} key={subject}>
               <ConditionalLink headline text={subject} to={kitUrl} />
+              {pilot && (
+                <ProgressBar progress={Math.round(pilot[2])} undesigned />
+              )}
               <ListGroup
                 description={description}
                 items={filteredList}
