@@ -1,3 +1,5 @@
+import { randomProperty } from "../utils/object";
+
 const lessonsLists = {
   "עיצוב טקסט": [
     {
@@ -112,6 +114,11 @@ const topicDictionary = {
   TextDesign: "עיצוב טקסט",
   PageBasics: "פעולות בסיסיות",
   BasicDesign: "עיצוב בצבע",
+};
+
+export const randomLesson = () => {
+  const list = lessonsLists[randomProperty(topicDictionary)];
+  return list[Math.floor(Math.random() * list.length)];
 };
 
 export const getLesson = (topic, id) =>
