@@ -1,46 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Navbar from "react-bootstrap/NavBar";
+import Nav from "react-bootstrap/Nav";
 
 import { headUrl, lessonsUrl, hotkeysUrl, autopilotsUrl } from "../constants";
 
-function NavBar(props) {
+function AppNavBar(props) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <Navbar expand="lg" expanded={expanded} bg="light">
       <Link className="navbar-brand" to={headUrl}>
         Helputer
       </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to={lessonsUrl}>
-              Lessons
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to={hotkeysUrl}>
-              Hotkeys
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to={autopilotsUrl}>
-              Autopilots
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <Navbar.Toggle
+        aria-controls="responsive-navbar-nav"
+        onClick={() => setExpanded(!expanded)}
+      />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav
+          onClick={() => {
+            if (expanded) setExpanded(!expanded);
+          }}
+        >
+          <NavLink className="nav-link" to={lessonsUrl}>
+            Lessons
+          </NavLink>
+          <NavLink className="nav-link" to={hotkeysUrl}>
+            Hotkeys
+          </NavLink>
+          <NavLink className="nav-link" to={autopilotsUrl}>
+            Autopilots
+          </NavLink>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
-export default NavBar;
+export default AppNavBar;
