@@ -11,8 +11,11 @@ let all = randomLessons();
 function UltimatePilot(props) {
   const [index, setIndex] = useState(0);
   const [lessons, setLessons] = useState([all[index]]);
+  const size = lessons.length;
 
   const firstIndex = 0;
+  const lastIndex = size - 1;
+  const isLastItem = index === lastIndex;
 
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
@@ -20,7 +23,7 @@ function UltimatePilot(props) {
   const nextLessonChosen = (l) => {
     all = all.filter((item) => item !== l);
     setLessons([...lessons, l]);
-    increaseIndex();
+    setIndex(size);
   };
 
   const removeChoices = (count = 1) => {
@@ -32,16 +35,17 @@ function UltimatePilot(props) {
     setLessons(previousLessons);
   };
 
+  const handleNext = () => {
+    if (!isLastItem) increaseIndex();
+  };
+
   const handlePrevious = () => {
-    if (index > 0) {
-      removeChoices();
-      decreaseIndex();
-    }
+    if (index > 0) decreaseIndex();
   };
 
   const handleChoiceRevert = (lesson) => {
     const index = lessons.findIndex((l) => l.name === lesson.name);
-    removeChoices(lessons.length - 1 - index);
+    removeChoices(lastIndex - index);
     setIndex(index);
   };
 
@@ -69,13 +73,14 @@ function UltimatePilot(props) {
         item={currentLesson}
       />
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
-        {nextLessons.map((l) => (
-          <ListItem
-            handleSelect={() => nextLessonChosen(l)}
-            item={l}
-            key={l.name}
-          />
-        ))}
+        {isLastItem &&
+          nextLessons.map((l) => (
+            <ListItem
+              handleSelect={() => nextLessonChosen(l)}
+              item={l}
+              key={l.name}
+            />
+          ))}
       </ul>
       <ul className="my-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
@@ -89,6 +94,9 @@ function UltimatePilot(props) {
         ))}
       </ul>
       <div className="row justify-content-center">
+        <Button disabled={isLastItem} onClick={handleNext}>
+          Next
+        </Button>
         <Button disabled={index === firstIndex} onClick={handlePrevious}>
           Previous
         </Button>
