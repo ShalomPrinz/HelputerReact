@@ -1,5 +1,10 @@
 import { getLesson, lessonFinished } from "./lessonsService";
 
+export const ultimate = {
+  title: "Helputer Ultimate Pilot",
+  description: "טייס הבית - הטייס האולטימטיבי, איתך לאורך כל הדרך",
+};
+
 const references = [
   {
     title: "Basic Headline",
