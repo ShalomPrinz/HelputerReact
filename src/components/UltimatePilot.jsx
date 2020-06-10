@@ -39,9 +39,14 @@ function UltimatePilot(props) {
     }
   };
 
-  const handleSelect = (lesson) => {
+  const handleChoiceRevert = (lesson) => {
     const index = lessons.findIndex((l) => l.name === lesson.name);
     removeChoices(lessons.length - 1 - index);
+    setIndex(index);
+  };
+
+  const visitChosenLesson = (lesson) => {
+    const index = lessons.findIndex((l) => l.name === lesson.name);
     setIndex(index);
   };
 
@@ -75,7 +80,8 @@ function UltimatePilot(props) {
       <ul className="my-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
           <ListItem
-            handleSelect={() => handleSelect(l)}
+            handleDoubleSelect={() => handleChoiceRevert(l)}
+            handleSelect={() => visitChosenLesson(l)}
             item={l}
             key={l.name}
             selected={l.name === selectedName}

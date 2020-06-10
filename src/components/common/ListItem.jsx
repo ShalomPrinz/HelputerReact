@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Popover from "./Popover";
 
-function ListItem({ autolist, className = "", handleSelect, item, selected }) {
+function ListItem({
+  autolist,
+  className = "",
+  handleDoubleSelect,
+  handleSelect,
+  item,
+  selected,
+}) {
   const [active, setActive] = useState(false);
   const current = selected && !active ? "bg-info text-white" : "";
 
@@ -21,10 +28,16 @@ function ListItem({ autolist, className = "", handleSelect, item, selected }) {
     else handleSelect();
   };
 
+  const onDoubleClick = () => {
+    if (typeof handleDoubleSelect !== "function") activate();
+    else handleDoubleSelect();
+  };
+
   const li = (
     <li
       className={`list-group-item clickable ${current} ${active} ${className}`}
       onClick={onClick}
+      onDoubleClick={onDoubleClick}
     >
       <Popover item={item} />
     </li>
