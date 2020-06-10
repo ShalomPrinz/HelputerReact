@@ -33,12 +33,12 @@ function Pilot(props) {
   };
 
   const handleSelect = (lesson) => {
-    const index = lessons.findIndex((l) => l.id === lesson.id);
+    const index = lessons.findIndex((l) => l.name === lesson.name);
     setIndex(index);
   };
 
   const currentLesson = lessons[index];
-  const selectedId = currentLesson.id;
+  const selectedName = currentLesson.name;
 
   return (
     <div className="col">
@@ -66,8 +66,8 @@ function Pilot(props) {
           <ListItem
             handleSelect={() => handleSelect(l)}
             item={l}
-            key={l.id}
-            selected={l.id === selectedId}
+            key={l.name}
+            selected={l.name === selectedName}
           />
         ))}
       </ul>

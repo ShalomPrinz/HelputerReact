@@ -30,13 +30,13 @@ function UltimatePilot(props) {
   };
 
   const handleSelect = (lesson) => {
-    const index = lessons.findIndex((l) => l.id === lesson.id);
+    const index = lessons.findIndex((l) => l.name === lesson.name);
     setIndex(index);
   };
 
   const currentLesson = lessons[index];
   const nextLessons = [randomLesson(), randomLesson(), randomLesson()];
-  const selectedId = currentLesson.id;
+  const selectedName = currentLesson.name;
 
   return (
     <div className="col">
@@ -55,7 +55,7 @@ function UltimatePilot(props) {
           <ListItem
             handleSelect={() => nextLessonChosen(l)}
             item={l}
-            key={l.id}
+            key={l.name}
           />
         ))}
       </ul>
@@ -64,8 +64,8 @@ function UltimatePilot(props) {
           <ListItem
             handleSelect={() => handleSelect(l)}
             item={l}
-            key={l.id}
-            selected={l.id === selectedId}
+            key={l.name}
+            selected={l.name === selectedName}
           />
         ))}
       </ul>
