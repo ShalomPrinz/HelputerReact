@@ -45,6 +45,10 @@ function UltimatePilot(props) {
 
   const handleChoiceRevert = (lesson) => {
     const index = lessons.findIndex((l) => l.name === lesson.name);
+    revertChoice(index);
+  };
+
+  const revertChoice = (index) => {
     removeChoices(lastIndex - index);
     setIndex(index);
   };
@@ -82,6 +86,17 @@ function UltimatePilot(props) {
             />
           ))}
       </ul>
+      {!isLastItem && (
+        <div className="row justify-content-center">
+          <Button
+            color="warning"
+            disabled={isLastItem}
+            onClick={() => revertChoice(index)}
+          >
+            Revert
+          </Button>
+        </div>
+      )}
       <ul className="my-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
           <ListItem
