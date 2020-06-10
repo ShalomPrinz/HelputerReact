@@ -1,4 +1,5 @@
 import { randomProperty } from "../utils/object";
+import { shuffle } from "../utils/array";
 
 const lessonsLists = {
   "עיצוב טקסט": [
@@ -119,6 +120,14 @@ const topicDictionary = {
 export const randomLesson = () => {
   const list = lessonsLists[randomProperty(topicDictionary)];
   return list[Math.floor(Math.random() * list.length)];
+};
+
+export const randomLessons = () => {
+  let all = [];
+  Object.entries(lessonsLists).forEach(
+    ([subject, list]) => (all = all.concat(list))
+  );
+  return shuffle(all);
 };
 
 export const getLesson = (topic, id) =>

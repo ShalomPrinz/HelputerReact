@@ -2,13 +2,15 @@ import React, { useState } from "react";
 
 import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
-import { randomLesson } from "../services/lessonsService";
+import { randomLessons } from "../services/lessonsService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
 
+let all = randomLessons();
+
 function UltimatePilot(props) {
   const [index, setIndex] = useState(0);
-  const [lessons, setLessons] = useState([randomLesson()]);
+  const [lessons, setLessons] = useState([all[index]]);
 
   const firstIndex = 0;
 
@@ -16,6 +18,7 @@ function UltimatePilot(props) {
   const decreaseIndex = () => setIndex(index - 1);
 
   const nextLessonChosen = (l) => {
+    all = all.filter((item) => item !== l);
     setLessons([...lessons, l]);
     increaseIndex();
   };
@@ -25,7 +28,7 @@ function UltimatePilot(props) {
 
     const previousLessons = [...lessons];
     for (var poppedCount = 0; poppedCount < count; poppedCount++)
-      previousLessons.pop();
+      all.push(previousLessons.pop());
     setLessons(previousLessons);
   };
 
@@ -43,7 +46,9 @@ function UltimatePilot(props) {
   };
 
   const currentLesson = lessons[index];
-  const nextLessons = [randomLesson(), randomLesson(), randomLesson()];
+  const nextLessons = [];
+  for (let i = 0; i < 3 && index + i < all.length; i++)
+    nextLessons[i] = all[index + i];
   const selectedName = currentLesson.name;
 
   return (
