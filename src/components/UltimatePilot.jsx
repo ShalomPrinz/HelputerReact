@@ -2,15 +2,11 @@ import React, { useState } from "react";
 
 import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
-import { randomLessons } from "../services/lessonsService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
 
-let all = randomLessons();
-
-function UltimatePilot(props) {
+function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
   const [index, setIndex] = useState(0);
-  const [lessons, setLessons] = useState([all[index]]);
   const size = lessons.length;
 
   const firstIndex = 0;
@@ -19,21 +15,6 @@ function UltimatePilot(props) {
 
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
-
-  const nextLessonChosen = (l) => {
-    all = all.filter((item) => item !== l);
-    setLessons([...lessons, l]);
-    setIndex(size);
-  };
-
-  const removeChoices = (count = 1) => {
-    if (count === 0) return;
-
-    const previousLessons = [...lessons];
-    for (var poppedCount = 0; poppedCount < count; poppedCount++)
-      all.push(previousLessons.pop());
-    setLessons(previousLessons);
-  };
 
   const handleNext = () => {
     if (!isLastItem) increaseIndex();
@@ -80,7 +61,10 @@ function UltimatePilot(props) {
         {isLastItem &&
           nextLessons.map((l) => (
             <ListItem
-              handleSelect={() => nextLessonChosen(l)}
+              handleSelect={() => {
+                nextLessonChosen(l);
+                setIndex(size);
+              }}
               item={l}
               key={l.name}
             />

@@ -1,7 +1,8 @@
 import React from "react";
+import UltimatePilotContainer from "./UltimatePilotContainer";
 
 const Hotkeys = () => {
-  return <h1>Hotkeys</h1>;
+  return <UltimatePilotContainer />;
 };
 
 export default Hotkeys;
