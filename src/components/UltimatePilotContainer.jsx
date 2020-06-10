@@ -22,14 +22,14 @@ function UltimatePilotContainer(props) {
     setLessons(previousLessons);
   };
 
-  return (
-    <UltimatePilot
-      all={all}
-      lessons={lessons}
-      nextLessonChosen={nextLessonChosen}
-      removeChoices={removeChoices}
-    />
-  );
+  return <UltimatePilot {...{ lessons, nextLessonChosen, removeChoices }} />;
 }
+
+export const getOptions = (index) => {
+  const options = [];
+  for (let i = 1; i < 4 && index + i < all.length; i++)
+    options[i] = all[index + i];
+  return options;
+};
 
 export default UltimatePilotContainer;

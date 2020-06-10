@@ -4,8 +4,9 @@ import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
+import { getOptions } from "./UltimatePilotContainer";
 
-function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
+function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   const [index, setIndex] = useState(0);
   const size = lessons.length;
 
@@ -24,25 +25,25 @@ function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
     if (index > 0) decreaseIndex();
   };
 
-  const handleChoiceRevert = (lesson) => {
-    const index = lessons.findIndex((l) => l.name === lesson.name);
-    revertChoice(index);
+  const handleOptionSelect = (l) => {
+    nextLessonChosen(l);
+    setIndex(size);
   };
 
-  const revertChoice = (index) => {
+  const handleChosenSelect = (lesson, revert = false) => {
+    const index = lessons.findIndex((l) => l.name === lesson.name);
+
+    if (revert) handleRevert(index);
+    else setIndex(index);
+  };
+
+  const handleRevert = (index) => {
     removeChoices(lastIndex - index);
     setIndex(index);
   };
 
-  const visitChosenLesson = (lesson) => {
-    const index = lessons.findIndex((l) => l.name === lesson.name);
-    setIndex(index);
-  };
-
   const currentLesson = lessons[index];
-  const nextLessons = [];
-  for (let i = 0; i < 3 && index + i < all.length; i++)
-    nextLessons[i] = all[index + i];
+  const options = getOptions(index);
   const selectedName = currentLesson.name;
 
   return (
@@ -59,12 +60,9 @@ function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
       />
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {isLastItem &&
-          nextLessons.map((l) => (
+          options.map((l) => (
             <ListItem
-              handleSelect={() => {
-                nextLessonChosen(l);
-                setIndex(size);
-              }}
+              handleSelect={() => handleOptionSelect(l)}
               item={l}
               key={l.name}
             />
@@ -75,7 +73,7 @@ function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
           <Button
             color="warning"
             disabled={isLastItem}
-            onClick={() => revertChoice(index)}
+            onClick={() => handleRevert(index)}
           >
             Revert
           </Button>
@@ -84,8 +82,8 @@ function UltimatePilot({ all, lessons, nextLessonChosen, removeChoices }) {
       <ul className="my-3 list-group list-group-horizontal justify-content-center">
         {lessons.map((l) => (
           <ListItem
-            handleDoubleSelect={() => handleChoiceRevert(l)}
-            handleSelect={() => visitChosenLesson(l)}
+            handleDoubleSelect={() => handleChosenSelect(l, true)}
+            handleSelect={() => handleChosenSelect(l)}
             item={l}
             key={l.name}
             selected={l.name === selectedName}
