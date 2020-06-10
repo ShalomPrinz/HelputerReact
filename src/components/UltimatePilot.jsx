@@ -20,17 +20,25 @@ function UltimatePilot(props) {
     increaseIndex();
   };
 
+  const removeChoices = (count = 1) => {
+    if (count === 0) return;
+
+    const previousLessons = [...lessons];
+    for (var poppedCount = 0; poppedCount < count; poppedCount++)
+      previousLessons.pop();
+    setLessons(previousLessons);
+  };
+
   const handlePrevious = () => {
     if (index > 0) {
-      const previousLessons = [...lessons];
-      previousLessons.pop();
-      setLessons(previousLessons);
+      removeChoices();
       decreaseIndex();
     }
   };
 
   const handleSelect = (lesson) => {
     const index = lessons.findIndex((l) => l.name === lesson.name);
+    removeChoices(lessons.length - 1 - index);
     setIndex(index);
   };
 
