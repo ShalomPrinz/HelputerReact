@@ -15,12 +15,18 @@ function UltimatePilot(props) {
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
 
-  const handleNext = () => {
+  const nextLessonChosen = (l) => {
+    setLessons([...lessons, l]);
     increaseIndex();
   };
 
   const handlePrevious = () => {
-    if (index > 0) decreaseIndex();
+    if (index > 0) {
+      const previousLessons = [...lessons];
+      previousLessons.pop();
+      setLessons(previousLessons);
+      decreaseIndex();
+    }
   };
 
   const handleSelect = (lesson) => {
@@ -46,7 +52,11 @@ function UltimatePilot(props) {
       />
       <ul className="mt-3 list-group list-group-horizontal justify-content-center">
         {nextLessons.map((l) => (
-          <ListItem item={l} key={l.id} />
+          <ListItem
+            handleSelect={() => nextLessonChosen(l)}
+            item={l}
+            key={l.id}
+          />
         ))}
       </ul>
       <ul className="my-3 list-group list-group-horizontal justify-content-center">
