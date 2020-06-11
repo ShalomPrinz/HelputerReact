@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
+import Icon from "./common/Icon";
 import { getOptions } from "./UltimatePilotContainer";
 
 function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
@@ -82,17 +87,23 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
           </Button>
         </div>
       )}
-      <ul className="my-3 list-group list-group-horizontal justify-content-center">
-        {lessons.map((l) => (
-          <ListItem
-            handleDoubleSelect={() => handleChosenSelect(l, true)}
-            handleSelect={() => handleChosenSelect(l)}
-            item={l}
-            key={l.name}
-            selected={l.name === selectedName}
-          />
-        ))}
-      </ul>
+
+      <div className="row justify-content-center">
+        <Icon icon={faChevronLeft} />
+        <ul className="my-3 list-group list-group-horizontal justify-content-center">
+          {lessons.map((l) => (
+            <ListItem
+              handleDoubleSelect={() => handleChosenSelect(l, true)}
+              handleSelect={() => handleChosenSelect(l)}
+              item={l}
+              key={l.name}
+              selected={l.name === selectedName}
+            />
+          ))}
+        </ul>
+        <Icon icon={faChevronRight} />
+      </div>
+
       <div className="row justify-content-center">
         <Button disabled={isLastItem} onClick={handleNext}>
           Next
