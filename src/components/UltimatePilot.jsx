@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 
 import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
-import Icon from "./common/Icon";
+import Icon, { icons } from "./common/Icon";
 import { getOptions } from "./UltimatePilotContainer";
 
 function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
@@ -89,7 +85,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
       )}
 
       <div className="row justify-content-center">
-        <Icon icon={faChevronLeft} />
+        <Icon className="mx-5" icon={icons.faChevronLeft} />
         <ul className="my-3 list-group list-group-horizontal justify-content-center">
           {lessons.map((l) => (
             <ListItem
@@ -101,7 +97,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
             />
           ))}
         </ul>
-        <Icon icon={faChevronRight} />
+        <Icon className="mx-5" icon={icons.faChevronRight} />
       </div>
 
       <div className="row justify-content-center">
