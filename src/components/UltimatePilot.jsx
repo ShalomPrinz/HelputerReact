@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
@@ -8,8 +8,11 @@ import { getOptions } from "./UltimatePilotContainer";
 
 function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   const [index, setIndex] = useState(0);
-  const size = lessons.length;
+  const [options, setOptions] = useState(getOptions(index));
 
+  useEffect(() => setOptions(getOptions(index)), [index]);
+
+  const size = lessons.length;
   const firstIndex = 0;
   const lastIndex = size - 1;
   const isLastItem = index === lastIndex;
@@ -43,7 +46,6 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   };
 
   const currentLesson = lessons[index];
-  const options = getOptions(index);
   const selectedName = currentLesson.name;
 
   return (
@@ -62,6 +64,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
         {isLastItem &&
           options.map((l) => (
             <ListItem
+              className="bg-light border border-secondary mx-2 rounded"
               handleSelect={() => handleOptionSelect(l)}
               item={l}
               key={l.name}
