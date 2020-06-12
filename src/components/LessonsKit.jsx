@@ -12,6 +12,7 @@ export const filterList = (list, query) =>
 
 function LessonsKit({
   className,
+  exactUrl,
   list,
   onItemSelect,
   onKitSelectUrl,
@@ -22,9 +23,13 @@ function LessonsKit({
 
   const filteredList = filterList(items, query);
 
-  if (filteredList.length === 0) return null;
+  if (filteredList.length === 0 && items.length !== 0) return null;
 
-  const kitUrl = onKitSelectUrl ? onKitSelectUrl + "/" + subject : false;
+  const kitUrl = onKitSelectUrl
+    ? exactUrl
+      ? onKitSelectUrl
+      : onKitSelectUrl + "/" + subject
+    : false;
 
   const pilot = pilots[subject];
 

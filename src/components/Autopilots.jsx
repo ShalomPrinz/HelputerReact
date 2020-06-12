@@ -1,11 +1,31 @@
 import React from "react";
 
-import { autopilotUrl } from "../constants";
-import pilots from "../services/pilotsService";
+import { autopilotUrl, ultimatePilotUrl } from "../constants";
+import useWindowSize, { getGridSize } from "../hooks/useWindowSize";
+import pilots, { ultimate } from "../services/pilotsService";
 import Kits from "./Kits";
+import LessonsKit from "./LessonsKit";
 
 function Lessons() {
-  return <Kits lists={pilots} onKitSelectUrl={autopilotUrl} />;
+  const size = useWindowSize();
+
+  const ultimatePilotKit = (
+    <LessonsKit
+      className={getGridSize(size[0])}
+      exactUrl
+      list={[[], ultimate.description]}
+      onKitSelectUrl={ultimatePilotUrl}
+      subject={ultimate.title}
+    />
+  );
+
+  return (
+    <Kits
+      FirstKit={ultimatePilotKit}
+      lists={pilots}
+      onKitSelectUrl={autopilotUrl}
+    />
+  );
 }
 
 export default Lessons;
