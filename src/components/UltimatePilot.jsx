@@ -32,6 +32,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   const handleOptionSelect = (l) => {
     nextLessonChosen(l);
     setIndex(size);
+    http.paint(l);
   };
 
   const handleRevert = (index) => {
@@ -75,15 +76,44 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
       </ul>
 
       <div className="row justify-content-center">
-        <Button disabled={isLastItem} onClick={handleNext}>
-          Next{!isLastItem && ` - ${lessons[index + 1].name}`}
-        </Button>
-        <Button disabled={isFirstItem} onClick={handlePrevious}>
-          Previous{!isFirstItem && ` - ${lessons[index - 1].name}`}
-        </Button>
+        <LessonNavigator
+          disabled={isLastItem}
+          lesson={lessons[index + 1]}
+          onClick={handleNext}
+          text="Next"
+        />
+        <LessonNavigator
+          disabled={isFirstItem}
+          lesson={lessons[index - 1]}
+          onClick={handlePrevious}
+          text="Previous"
+        />
       </div>
     </div>
   );
 }
+
+const LessonNavigator = ({ disabled, lesson, onClick, text }) => {
+  const onLessonClick = () => {
+    onClick();
+    http.paint(lesson);
+  };
+
+  return (
+    <div className="col-6 list-group">
+      <Button autocol={false} disabled={disabled} onClick={onClick}>
+        {text}
+      </Button>
+      {!disabled && (
+        <div
+          className="btn btn-info mx-auto rounded w-75"
+          onClick={onLessonClick}
+        >
+          {lesson.name}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default UltimatePilot;
