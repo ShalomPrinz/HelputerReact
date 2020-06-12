@@ -1,7 +1,12 @@
 import React from "react";
+import hotkeys from "../services/hotkeysService";
 
 const Hotkeys = () => {
-  return <h1>Hotkeys</h1>;
+  return hotkeys.map(({ name, combination, key }) => (
+    <div>
+      name - {name}, combination - {combination}, key - {key}
+    </div>
+  ));
 };
 
 export default Hotkeys;
