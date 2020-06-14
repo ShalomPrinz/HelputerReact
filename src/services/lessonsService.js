@@ -135,4 +135,5 @@ export const getLesson = (topic, id) =>
 
 export const lessonFinished = (lesson) => (lesson.finished = true);
 
+export const fieldToSearch = "name";
 export default lessonsLists;

@@ -1,10 +1,10 @@
 import React from "react";
 
-import lessonsLists from "../services/lessonsService";
+import lessonsLists, { fieldToSearch } from "../services/lessonsService";
 import Kits from "./Kits";
 
 function Lessons() {
-  return <Kits lists={lessonsLists} />;
+  return <Kits fieldToSearch={fieldToSearch} lists={lessonsLists} />;
 }
 
 export default Lessons;

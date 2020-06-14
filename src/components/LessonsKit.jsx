@@ -4,24 +4,18 @@ import ConditionalLink from "./common/ConditionalLink";
 import ListGroup from "./common/ListGroup";
 import ProgressBar from "./common/ProgressBar";
 import pilots from "../services/pilotsService";
-import { search } from "../utils/array";
-
-const fieldToSearch = "name";
 
 function LessonsKit({
   className,
+  description,
   exactUrl,
-  list,
+  items = [],
   onItemSelect,
   onKitSelectUrl,
   query,
   subject,
 }) {
-  const [items, description] = typeof list[1] === "string" ? list : [list];
-
-  const filteredList = search(fieldToSearch, items, query);
-
-  if (filteredList.length === 0 && items.length !== 0) return null;
+  if (items.length === 0 && !description) return null;
 
   const kitUrl = onKitSelectUrl
     ? exactUrl
@@ -37,7 +31,7 @@ function LessonsKit({
       {pilot && <ProgressBar progress={Math.round(pilot[2])} undesigned />}
       <ListGroup
         description={description}
-        items={filteredList}
+        items={items}
         marginTop={pilot ? 0 : undefined}
         onItemSelect={onItemSelect}
         onKitSelectUrl={kitUrl}

@@ -12,8 +12,8 @@ function Lessons() {
   const ultimatePilotKit = (
     <LessonsKit
       className={getGridSize(size[0])}
+      description={ultimate.description}
       exactUrl
-      list={[[], ultimate.description]}
       onKitSelectUrl={ultimatePilotUrl}
       subject={ultimate.title}
     />

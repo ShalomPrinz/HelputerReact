@@ -1,4 +1,4 @@
-import { getLesson, lessonFinished } from "./lessonsService";
+import { getLesson, lessonFinished, fieldToSearch } from "./lessonsService";
 
 export const ultimate = {
   title: "Helputer Ultimate Pilot",
@@ -37,4 +37,5 @@ export const finished = (topic, lesson) => {
   pilot[2] += step;
 };
 
+export { fieldToSearch };
 export default pilots;

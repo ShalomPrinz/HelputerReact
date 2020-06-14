@@ -9,7 +9,7 @@ import { search } from "../utils/array";
 const default_onItemSelect = (item) => http.paint(item);
 
 function Kits({
-  fieldToSearch = "name",
+  fieldToSearch,
   FirstKit,
   lists,
   onItemSelect = default_onItemSelect,
@@ -19,6 +19,12 @@ function Kits({
   const size = useWindowSize();
   let found = false;
 
+  const convertTuple = (tuple) => {
+    let [items, description] = typeof tuple[1] === "string" ? tuple : [tuple];
+    items = search(fieldToSearch, items, query);
+    return [items, description];
+  };
+
   return (
     <>
       <div className="mx-auto w-50">
@@ -26,14 +32,21 @@ function Kits({
       </div>
       <div className="row justify-content-center">
         {FirstKit && FirstKit}
-        {Object.entries(lists).map(([subject, list]) => {
-          found = !found
-            ? search(fieldToSearch, list, query).length !== 0
-            : found;
+        {Object.entries(lists).map(([subject, tuple]) => {
+          let [items, description] = convertTuple(tuple);
+          found = !found ? items.length !== 0 : found;
+
           return (
             <LessonsKit
               className={getGridSize(size[0])}
-              {...{ list, onItemSelect, onKitSelectUrl, query, subject }}
+              {...{
+                description,
+                items,
+                onItemSelect,
+                onKitSelectUrl,
+                query,
+                subject,
+              }}
             />
           );
         })}
