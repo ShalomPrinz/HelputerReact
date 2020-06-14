@@ -6,3 +6,10 @@ export const shuffle = (array) => {
   }
   return array;
 };
+
+export const search = (field, list, query) =>
+  query === ""
+    ? list
+    : list.filter((item) =>
+        item[field] ? item[field].toLowerCase().indexOf(query) !== -1 : list
+      );

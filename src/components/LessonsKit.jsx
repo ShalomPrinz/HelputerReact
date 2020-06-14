@@ -4,11 +4,9 @@ import ConditionalLink from "./common/ConditionalLink";
 import ListGroup from "./common/ListGroup";
 import ProgressBar from "./common/ProgressBar";
 import pilots from "../services/pilotsService";
+import { search } from "../utils/array";
 
-export const filterList = (list, query) =>
-  query === ""
-    ? list
-    : list.filter((lesson) => lesson.name.indexOf(query) !== -1);
+const fieldToSearch = "name";
 
 function LessonsKit({
   className,
@@ -21,7 +19,7 @@ function LessonsKit({
 }) {
   const [items, description] = typeof list[1] === "string" ? list : [list];
 
-  const filteredList = filterList(items, query);
+  const filteredList = search(fieldToSearch, items, query);
 
   if (filteredList.length === 0 && items.length !== 0) return null;
 
