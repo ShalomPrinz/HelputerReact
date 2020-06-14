@@ -14,7 +14,9 @@ const ListGroup = ({
   selectedItemValue: value,
   valueProperty,
 }) => {
-  const [selectedItemValue, setSelectedItemValue] = useState(value || "-1");
+  value = typeof value === "number" ? value : "-1";
+
+  const [selectedItemValue, setSelectedItemValue] = useState(value);
 
   const handleItemSelect = (selectedItem, onItemSelect) => {
     setSelectedItemValue(selectedItem[valueProperty]);
