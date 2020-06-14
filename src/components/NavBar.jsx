@@ -3,7 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/NavBar";
 import Nav from "react-bootstrap/Nav";
 
-import { headUrl, lessonsUrl, hotkeysUrl, autopilotsUrl } from "../constants";
+import {
+  headUrl,
+  lessonsUrl,
+  hotkeysUrl,
+  autopilotsUrl,
+  learnHotkeysUrl,
+} from "../constants";
 
 function AppNavBar(props) {
   const [expanded, setExpanded] = useState(false);
@@ -31,6 +37,9 @@ function AppNavBar(props) {
           </NavLink>
           <NavLink className="nav-link" to={autopilotsUrl}>
             Autopilots
+          </NavLink>
+          <NavLink className="nav-link" to={learnHotkeysUrl}>
+            Learn Hotkeys
           </NavLink>
         </Nav>
       </Navbar.Collapse>
