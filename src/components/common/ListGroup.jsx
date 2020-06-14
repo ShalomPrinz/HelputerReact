@@ -1,61 +1,56 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ConditionalLink from "./ConditionalLink";
 import ListItem from "./ListItem";
 
-class ListGroup extends Component {
-  state = { selectedItemValue: "-1" };
+const ListGroup = ({
+  description,
+  items,
+  marginBottom,
+  marginTop,
+  onItemSelect,
+  onKitSelectUrl,
+  searching,
+  selectedItemValue: value,
+  valueProperty,
+}) => {
+  const [selectedItemValue, setSelectedItemValue] = useState(value || "-1");
 
-  handleItemSelect = (selectedItem, selectedItemValue, onItemSelect) => {
-    this.setState({ selectedItemValue });
+  const handleItemSelect = (selectedItem, onItemSelect) => {
+    setSelectedItemValue(selectedItem[valueProperty]);
     onItemSelect(selectedItem);
   };
 
-  isActiveSelection = (value, searching) =>
-    value === this.state.selectedItemValue && !searching;
+  const isActiveSelection = (value, searching) =>
+    value === selectedItemValue && !searching;
 
-  render() {
-    const {
-      valueProperty,
-      onItemSelect,
-      items,
-      description,
-      marginBottom = 3,
-      marginTop = 3,
-      onKitSelectUrl,
-      searching,
-    } = this.props;
-
-    return (
-      <ul className={`list-group mb-${marginBottom} mt-${marginTop}`}>
-        <ConditionalLink
-          className="mb-2 mt-1"
-          text={description}
-          to={onKitSelectUrl}
+  return (
+    <ul className={`list-group mb-${marginBottom} mt-${marginTop}`}>
+      <ConditionalLink
+        className="mb-2 mt-1"
+        text={description}
+        to={onKitSelectUrl}
+      />
+      {items.map((item) => (
+        <ListItem
+          className={
+            isActiveSelection(item[valueProperty], searching) ? "active" : ""
+          }
+          handleSelect={() => handleItemSelect(item, onItemSelect)}
+          item={item}
+          key={item[valueProperty]}
         />
-        {items.map((item) => (
-          <ListItem
-            className={
-              this.isActiveSelection(item[valueProperty], searching)
-                ? "active"
-                : ""
-            }
-            handleSelect={() =>
-              this.handleItemSelect(item, item[valueProperty], onItemSelect)
-            }
-            item={item}
-            key={item[valueProperty]}
-          />
-        ))}
-      </ul>
-    );
-  }
-}
+      ))}
+    </ul>
+  );
+};
 
 ListGroup.defaultProps = {
   textProperty: "name",
   valueProperty: "id",
   searching: false,
+  marginBottom: 3,
+  marginTop: 3,
 };
 
 ListGroup.propTypes = {
