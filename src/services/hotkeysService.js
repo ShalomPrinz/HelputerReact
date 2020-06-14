@@ -5,9 +5,11 @@ const sampleHotkeys = [
   "נטוי, Ctrl+, I",
 ];
 
+let id = 0;
+
 const hotkeys = sampleHotkeys.map((hotkey) => {
   const [name, combination, key] = hotkey.split(", ");
-  return { name, combination, key };
+  return { name, combination, key, id: id++ };
 });
 
 export default hotkeys;
