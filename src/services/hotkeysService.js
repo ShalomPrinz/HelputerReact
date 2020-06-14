@@ -12,4 +12,5 @@ const hotkeys = sampleHotkeys.map((hotkey) => {
   return { name, combination, key, id: id++ };
 });
 
+export const fieldToSearch = "name";
 export default hotkeys;
