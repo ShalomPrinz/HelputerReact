@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import KeyboardEventHandler from "react-keyboard-event-handler";
+import { AllKeys } from "react-keyboard-event-handler/src/keyEvents";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 
@@ -20,6 +21,7 @@ const langs = [english, hebrew];
 const AppKeyBoard = ({ listen, onListenComplete }) => {
   const [layout, setLayout] = useState(hebrew.value);
   const [previousEvent, setPreviousEvent] = useState("");
+  listen = tryValidateKeysString(listen);
 
   const shiftPressed = (event) => {
     if ((event === "down" || event === "up") && previousEvent !== event)
@@ -33,11 +35,13 @@ const AppKeyBoard = ({ listen, onListenComplete }) => {
 
   return (
     <>
-      <KeyboardEventHandler
-        handleFocusableElements
-        handleKeys={[listen]}
-        onKeyEvent={onListenComplete}
-      />
+      {isValidKeysString(listen) && (
+        <KeyboardEventHandler
+          handleFocusableElements
+          handleKeys={[listen]}
+          onKeyEvent={onListenComplete}
+        />
+      )}
       <KeyboardEventHandler
         handleEventType="keydown"
         handleFocusableElements
@@ -124,5 +128,24 @@ const keyboardOptions = {
     "{metaright}": "cmd ⌘",
   },
 };
+
+const tryValidateKeysString = (string) => {
+  return string.replace("Page Down", "pagedown").replace("Page Up", "pageup");
+};
+
+export const isValidKeysString = (string) => {
+  const keys = tryValidateKeysString(string)
+    .split("+")
+    .map((k) => k.toLowerCase());
+
+  let valid = true;
+  keys.forEach((k) => {
+    if (!Object.keys(AllKeys).includes(k)) valid = false;
+  });
+  return valid;
+};
+
+export const notValidKeyMessage =
+  'לצערנו, לפחות אחד מרצף המקשים הנ"ל אינו נתמך ועל כן איננו יכולים לעדכן בהתאם.';
 
 export default AppKeyBoard;

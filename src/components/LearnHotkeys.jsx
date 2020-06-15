@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-import KeyBoard from "./common/Keyboard";
+import KeyBoard, {
+  isValidKeysString,
+  notValidKeyMessage,
+} from "./common/Keyboard";
 import ListGroup from "./common/ListGroup";
 import hotkeys, { explanation } from "../services/hotkeysService";
 
@@ -27,6 +30,9 @@ function LearnHotkeys() {
       <div className="col text-center">
         <h1 className="mt-3">{name}</h1>
         <h4 className="my-3">{target}</h4>
+        {!isValidKeysString(target) && (
+          <h6 className="d-rtl text-danger">{notValidKeyMessage}</h6>
+        )}
         <div className="my-3 d-rtl">{explanation}</div>
         <KeyBoard listen={target} onListenComplete={() => onListenComplete()} />
       </div>
