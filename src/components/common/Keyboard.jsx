@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import KeyboardEventHandler from "react-keyboard-event-handler";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
@@ -16,7 +17,7 @@ const hebrew = {
 };
 const langs = [english, hebrew];
 
-const AppKeyBoard = (props) => {
+const AppKeyBoard = ({ listen, onListenComplete }) => {
   const [layout, setLayout] = useState(hebrew.value);
   const [previousEvent, setPreviousEvent] = useState("");
 
@@ -33,10 +34,15 @@ const AppKeyBoard = (props) => {
   return (
     <>
       <KeyboardEventHandler
+        handleFocusableElements
+        handleKeys={[listen]}
+        onKeyEvent={onListenComplete}
+      />
+      <KeyboardEventHandler
         handleEventType="keydown"
         handleFocusableElements
         handleKeys={["shift", "cap"]}
-        onKeyEvent={(key, e) =>
+        onKeyEvent={(key) =>
           key === "shift" ? shiftPressed("down") : toggleCapsMode()
         }
       />
@@ -44,17 +50,27 @@ const AppKeyBoard = (props) => {
         handleEventType="keyup"
         handleFocusableElements
         handleKeys={["shift"]}
-        onKeyEvent={(key, e) => shiftPressed("up")}
+        onKeyEvent={() => shiftPressed("up")}
       />
       <Dropdown
         className="my-2"
         headline={layout === hebrew.value ? "שפה" : "Language"}
-        onSelect={(key, e) => setLayout(langs[key].value)}
+        onSelect={(key) => setLayout(langs[key].value)}
         options={langs}
       />
       <Keyboard {...keyboardOptions} baseClass="keyboard" layoutName={layout} />
     </>
   );
+};
+
+AppKeyBoard.defaultProps = {
+  listen: "",
+  onListenComplete: function () {},
+};
+
+AppKeyBoard.propTypes = {
+  listen: PropTypes.string,
+  onListenComplete: PropTypes.func,
 };
 
 const commonOptions = {

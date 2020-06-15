@@ -20,7 +20,10 @@ function LearnHotkeys(props) {
         <h1 className="mt-3">{hotkey.name}</h1>
         <h4 className="my-3">{hotkey.combination + hotkey.key}</h4>
         <div className="my-3 d-rtl">{explanation}</div>
-        <KeyBoard />
+        <KeyBoard
+          listen={hotkey.combination + hotkey.key}
+          onListenComplete={() => console.log("listen completed")}
+        />
       </div>
     </div>
   );
