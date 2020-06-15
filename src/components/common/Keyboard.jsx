@@ -1,34 +1,40 @@
 import React, { useState } from "react";
+import KeyboardEventHandler from "react-keyboard-event-handler";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 
-const AppKeyBoard = () => {
-  const [layout, setLayout] = useState("default");
+const AppKeyBoard = (props) => {
+  const [layout, setLayout] = useState("hebrew");
+  const [previousEvent, setPreviousEvent] = useState("");
 
-  const onKeyPress = (button) => {
-    if (capsButtons.includes(button)) toggleCapsMode();
-  };
+  const shiftPressed = (event) => {
+    if ((event === "down" || event === "up") && previousEvent !== event)
+      toggleCapsMode();
 
-  const onKeyReleased = (button) => {
-    if (shiftButtons.includes(button)) setTimeout(toggleCapsMode, 300);
+    setPreviousEvent(event);
   };
 
   const toggleCapsMode = () =>
     setLayout(layout === "default" ? "caps" : "default");
 
   return (
-    <Keyboard
-      {...keyboardOptions}
-      baseClass="keyboard"
-      layoutName={layout}
-      onKeyReleased={(button) => onKeyReleased(button)}
-      onKeyPress={(button) => onKeyPress(button)}
-    />
+    <>
+      <KeyboardEventHandler
+        handleEventType="keydown"
+        handleKeys={["shift", "cap"]}
+        onKeyEvent={(key, e) =>
+          key === "shift" ? shiftPressed("down") : toggleCapsMode()
+        }
+      />
+      <KeyboardEventHandler
+        handleEventType="keyup"
+        handleKeys={["shift"]}
+        onKeyEvent={(key, e) => shiftPressed("up")}
+      />
+      <Keyboard {...keyboardOptions} baseClass="keyboard" layoutName={layout} />
+    </>
   );
 };
-
-const shiftButtons = ["{shift}", "{shiftleft}", "{shiftright}"];
-const capsButtons = [...shiftButtons, "{capslock}"];
 
 const commonOptions = {
   theme: "simple-keyboard hg-theme-default",
@@ -54,6 +60,14 @@ const keyboardOptions = {
       "{tab} Q W E R T Y U I O P { } |",
       '{capslock} A S D F G H J K L : " {enter}',
       "{shiftleft} Z X C V B N M < > ? {shiftright}",
+      "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+    ],
+    hebrew: [
+      "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
+      "` 1 2 3 4 5 6 7 8 9 0 - = {backspace}",
+      "{tab} / ' ק ר א ט ו ן ם פ [ ] \\",
+      "{capslock} ש ד ג כ ע י ח ל ך ף , {enter}",
+      "{shiftleft} ז ס ב ה נ מ צ ת ץ . {shiftright}",
       "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
     ],
   },
