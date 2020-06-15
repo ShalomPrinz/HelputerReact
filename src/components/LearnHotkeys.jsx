@@ -17,7 +17,7 @@ function LearnHotkeys() {
 
   return (
     <div className="row">
-      <div className="col-3">
+      <div className="border-top col-3 mt-4 scroll-down-list">
         <ListGroup
           items={hotkeys}
           onItemSelect={(hotkey) => setHotkey(hotkey)}

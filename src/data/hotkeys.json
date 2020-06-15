@@ -1,0 +1,1490 @@
+[
+  {
+    "name": "CopyToFrom",
+    "combination": "Shift+",
+    "key": "F2",
+    "id": 0
+  },
+  {
+    "name": "RR של אוצר מילים",
+    "combination": "Shift+",
+    "key": "F7",
+    "id": 1
+  },
+  {
+    "name": "VBCode",
+    "combination": "Alt+",
+    "key": "F11",
+    "id": 2
+  },
+  {
+    "name": "בדיקת מידע של מחקר",
+    "combination": "Ctrl+Shift+",
+    "key": "O",
+    "id": 3
+  },
+  {
+    "name": "בדיקת מיזוג דואר",
+    "combination": "Alt+Shift+",
+    "key": "K",
+    "id": 4
+  },
+  {
+    "name": "בזר פיסקה",
+    "combination": "Ctrl+Shift+",
+    "key": "J",
+    "id": 5
+  },
+  {
+    "name": "בחירת גודל גופן",
+    "combination": "Ctrl+Shift+",
+    "key": "P",
+    "id": 6
+  },
+  {
+    "name": "בחירת עמודה",
+    "combination": "Ctrl+Shift+",
+    "key": "F8",
+    "id": 7
+  },
+  {
+    "name": "בחר הכל",
+    "combination": "Ctrl+",
+    "key": "A",
+    "id": 8
+  },
+  {
+    "name": "בחר הכל",
+    "combination": "Ctrl+",
+    "key": "Clear (Num 5)‎",
+    "id": 9
+  },
+  {
+    "name": "בחר הכל",
+    "combination": "Ctrl+",
+    "key": "Num 5",
+    "id": 10
+  },
+  {
+    "name": "בחר טבלה",
+    "combination": "Alt+",
+    "key": "Clear (Num 5)‎",
+    "id": 11
+  },
+  {
+    "name": "בטל",
+    "combination": "Ctrl+",
+    "key": "Z",
+    "id": 12
+  },
+  {
+    "name": "בטל",
+    "combination": "Alt+",
+    "key": "Backspace",
+    "id": 13
+  },
+  {
+    "name": "בטל כניסה",
+    "combination": "Ctrl+Shift+",
+    "key": "M",
+    "id": 14
+  },
+  {
+    "name": "בטל נעילת שדות",
+    "combination": "Ctrl+",
+    "key": "4",
+    "id": 15
+  },
+  {
+    "name": "בטל נעילת שדות",
+    "combination": "Ctrl+Shift+",
+    "key": "F11",
+    "id": 16
+  },
+  {
+    "name": "בטל קישור של שדות",
+    "combination": "Ctrl+",
+    "key": "6",
+    "id": 17
+  },
+  {
+    "name": "בטל קישור של שדות",
+    "combination": "Ctrl+Shift+",
+    "key": "F9",
+    "id": 18
+  },
+  {
+    "name": "ביטול",
+    "combination": "",
+    "key": "Esc",
+    "id": 19
+  },
+  {
+    "name": "בצע לחיצה על שדה",
+    "combination": "Alt+Shift+",
+    "key": "F9",
+    "id": 20
+  },
+  {
+    "name": "בצע שוב",
+    "combination": "Alt+Shift+",
+    "key": "Backspace",
+    "id": 21
+  },
+  {
+    "name": "בצע שוב או חזור",
+    "combination": "Ctrl+",
+    "key": "Y",
+    "id": 22
+  },
+  {
+    "name": "בצע שוב או חזור",
+    "combination": "",
+    "key": "F4",
+    "id": 23
+  },
+  {
+    "name": "בצע שוב או חזור",
+    "combination": "Alt+",
+    "key": "Return",
+    "id": 24
+  },
+  {
+    "name": "ברירת  מחדל חדשה",
+    "combination": "Ctrl+",
+    "key": "N",
+    "id": 25
+  },
+  {
+    "name": "גודל מסמך",
+    "combination": "Ctrl+",
+    "key": "F8",
+    "id": 26
+  },
+  {
+    "name": "גופן",
+    "combination": "Ctrl+Shift+",
+    "key": "F",
+    "id": 27
+  },
+  {
+    "name": "גופן של סימן",
+    "combination": "Ctrl+Shift+",
+    "key": "Q",
+    "id": 28
+  },
+  {
+    "name": "גזירה",
+    "combination": "Ctrl+",
+    "key": "X",
+    "id": 29
+  },
+  {
+    "name": "גזירה",
+    "combination": "Shift+",
+    "key": "Del",
+    "id": 30
+  },
+  {
+    "name": "דקר",
+    "combination": "Ctrl+",
+    "key": "F3",
+    "id": 31
+  },
+  {
+    "name": "האובייקט הבא",
+    "combination": "Alt+",
+    "key": "Down",
+    "id": 32
+  },
+  {
+    "name": "האובייקט הקודם",
+    "combination": "Alt+",
+    "key": "Up",
+    "id": 33
+  },
+  {
+    "name": "הבלטה",
+    "combination": "Alt+Ctrl+",
+    "key": "H",
+    "id": 34
+  },
+  {
+    "name": "הגדל גופן",
+    "combination": "Ctrl+Shift+",
+    "key": ".",
+    "id": 35
+  },
+  {
+    "name": "הגדל גופן בנקודה אחת",
+    "combination": "Ctrl+",
+    "key": "[",
+    "id": 36
+  },
+  {
+    "name": "הגדל מסמך",
+    "combination": "Ctrl+",
+    "key": "F10",
+    "id": 37
+  },
+  {
+    "name": "הגהה",
+    "combination": "",
+    "key": "F7",
+    "id": 38
+  },
+  {
+    "name": "הדבק",
+    "combination": "Ctrl+",
+    "key": "V",
+    "id": 39
+  },
+  {
+    "name": "הדבק",
+    "combination": "Shift+",
+    "key": "Insert",
+    "id": 40
+  },
+  {
+    "name": "הדבק עיצוב",
+    "combination": "Ctrl+Shift+",
+    "key": "V",
+    "id": 41
+  },
+  {
+    "name": "הדבקה מיוחדת",
+    "combination": "Alt+Ctrl+",
+    "key": "V",
+    "id": 42
+  },
+  {
+    "name": "הדפסה",
+    "combination": "Ctrl+",
+    "key": "P",
+    "id": 43
+  },
+  {
+    "name": "הדפסה",
+    "combination": "Ctrl+",
+    "key": "F2",
+    "id": 44
+  },
+  {
+    "name": "הדפסה",
+    "combination": "Ctrl+Shift+",
+    "key": "F12",
+    "id": 45
+  },
+  {
+    "name": "הדפסה",
+    "combination": "Alt+Ctrl+",
+    "key": "I",
+    "id": 46
+  },
+  {
+    "name": "הוסף אבן בניין",
+    "combination": "",
+    "key": "F3",
+    "id": 47
+  },
+  {
+    "name": "הוסף אבן בניין",
+    "combination": "Alt+Ctrl+Shift+",
+    "key": "V",
+    "id": 48
+  },
+  {
+    "name": "הוסף דקר",
+    "combination": "Ctrl+Shift+",
+    "key": "F3",
+    "id": 49
+  },
+  {
+    "name": "הוסף הערה",
+    "combination": "Alt+Ctrl+",
+    "key": "M",
+    "id": 50
+  },
+  {
+    "name": "הוסף שדה",
+    "combination": "Ctrl+",
+    "key": "F9",
+    "id": 51
+  },
+  {
+    "name": "החלון הבא",
+    "combination": "Ctrl+",
+    "key": "F6",
+    "id": 52
+  },
+  {
+    "name": "החלון הבא",
+    "combination": "Alt+",
+    "key": "F6",
+    "id": 53
+  },
+  {
+    "name": "החלון הקודם",
+    "combination": "Ctrl+Shift+",
+    "key": "F6",
+    "id": 54
+  },
+  {
+    "name": "החלון הקודם",
+    "combination": "Alt+Shift+",
+    "key": "F6",
+    "id": 55
+  },
+  {
+    "name": "החלונית הבאה",
+    "combination": "",
+    "key": "F6",
+    "id": 56
+  },
+  {
+    "name": "החלונית הקודמת",
+    "combination": "Shift+",
+    "key": "F6",
+    "id": 57
+  },
+  {
+    "name": "החלף מצב משוואה",
+    "combination": "Alt+",
+    "key": "=",
+    "id": 58
+  },
+  {
+    "name": "החלף מצב רצועת כלים",
+    "combination": "Ctrl+",
+    "key": "F1",
+    "id": 59
+  },
+  {
+    "name": "החלף מצב של מסמכי משנה ראשיים",
+    "combination": "Ctrl+",
+    "key": "החלף מצב של סימוני תיקון מהדורה",
+    "id": 60
+  },
+  {
+    "name": "החלף מצב של קוד תו",
+    "combination": "Alt+",
+    "key": "X",
+    "id": 61
+  },
+  {
+    "name": "החלף מצב תצוגת XMLTag",
+    "combination": "Ctrl+Shift+",
+    "key": "X",
+    "id": 62
+  },
+  {
+    "name": "החלפה",
+    "combination": "Ctrl+",
+    "key": "H",
+    "id": 63
+  },
+  {
+    "name": "היפר-קישור",
+    "combination": "Ctrl+",
+    "key": "K",
+    "id": 64
+  },
+  {
+    "name": "המרת הנגול/הנג'ה (HHC)",
+    "combination": "Alt+Ctrl+",
+    "key": "F7",
+    "id": 65
+  },
+  {
+    "name": "הסג מיתאר",
+    "combination": "Alt+Shift+",
+    "key": "Right",
+    "id": 66
+  },
+  {
+    "name": "העבר",
+    "combination": "",
+    "key": "F2",
+    "id": 67
+  },
+  {
+    "name": "העבר מיתאר למטה",
+    "combination": "Alt+Shift+",
+    "key": "Down",
+    "id": 68
+  },
+  {
+    "name": "העבר מיתאר למעלה",
+    "combination": "Alt+Shift+",
+    "key": "Up",
+    "id": 69
+  },
+  {
+    "name": "הערת סיום",
+    "combination": "Alt+Ctrl+",
+    "key": "D",
+    "id": 70
+  },
+  {
+    "name": "הערת שוליים",
+    "combination": "Alt+Ctrl+",
+    "key": "F",
+    "id": 71
+  },
+  {
+    "name": "העתק",
+    "combination": "Ctrl+",
+    "key": "C",
+    "id": 72
+  },
+  {
+    "name": "העתק",
+    "combination": "Ctrl+",
+    "key": "Insert",
+    "id": 73
+  },
+  {
+    "name": "העתק עיצוב",
+    "combination": "Ctrl+Shift+",
+    "key": "C",
+    "id": 74
+  },
+  {
+    "name": "הצג את כל הכותרות",
+    "combination": "Alt+Shift+",
+    "key": "A",
+    "id": 75
+  },
+  {
+    "name": "הצג את כל הכותרות",
+    "combination": "Alt+Shift+",
+    "key": "A",
+    "id": 76
+  },
+  {
+    "name": "הצג הכל",
+    "combination": "Ctrl+Shift+",
+    "key": "8",
+    "id": 77
+  },
+  {
+    "name": "הצג כותרת1",
+    "combination": "Alt+Shift+",
+    "key": "1",
+    "id": 78
+  },
+  {
+    "name": "הצג כותרת2",
+    "combination": "Alt+Shift+",
+    "key": "2",
+    "id": 79
+  },
+  {
+    "name": "הצג כותרת3",
+    "combination": "Alt+Shift+",
+    "key": "3",
+    "id": 80
+  },
+  {
+    "name": "הצג כותרת4",
+    "combination": "Alt+Shift+",
+    "key": "4",
+    "id": 81
+  },
+  {
+    "name": "הצג כותרת5",
+    "combination": "Alt+Shift+",
+    "key": "5",
+    "id": 82
+  },
+  {
+    "name": "הצג כותרת6",
+    "combination": "Alt+Shift+",
+    "key": "6",
+    "id": 83
+  },
+  {
+    "name": "הצג כותרת7",
+    "combination": "Alt+Shift+",
+    "key": "7",
+    "id": 84
+  },
+  {
+    "name": "הצג כותרת8",
+    "combination": "Alt+Shift+",
+    "key": "8",
+    "id": 85
+  },
+  {
+    "name": "הצג כותרת9",
+    "combination": "Alt+Shift+",
+    "key": "9",
+    "id": 86
+  },
+  {
+    "name": "הקטן כניסה תלויה",
+    "combination": "Ctrl+Shift+",
+    "key": "T",
+    "id": 87
+  },
+  {
+    "name": "הרחב בחירה",
+    "combination": "",
+    "key": "F8",
+    "id": 88
+  },
+  {
+    "name": "הרחב במילה ימינה",
+    "combination": "Ctrl+Shift+",
+    "key": "Right",
+    "id": 89
+  },
+  {
+    "name": "הרחב במילה שמאלה",
+    "combination": "Ctrl+Shift+",
+    "key": "Left",
+    "id": 90
+  },
+  {
+    "name": "הרחב בעמוד למטה",
+    "combination": "Shift+",
+    "key": "Page Down",
+    "id": 91
+  },
+  {
+    "name": "הרחב בעמוד למעלה",
+    "combination": "Shift+",
+    "key": "Page Up",
+    "id": 92
+  },
+  {
+    "name": "הרחב בפיסקה למטה",
+    "combination": "Ctrl+Shift+",
+    "key": "Down",
+    "id": 93
+  },
+  {
+    "name": "הרחב בפיסקה למעלה",
+    "combination": "Ctrl+Shift+",
+    "key": "Up",
+    "id": 94
+  },
+  {
+    "name": "הרחב בשורה למטה",
+    "combination": "Shift+",
+    "key": "Down",
+    "id": 95
+  },
+  {
+    "name": "הרחב בשורה למעלה",
+    "combination": "Shift+",
+    "key": "Up",
+    "id": 96
+  },
+  {
+    "name": "הרחב בתו ימינה",
+    "combination": "Shift+",
+    "key": "Right",
+    "id": 97
+  },
+  {
+    "name": "הרחב בתו שמאלה",
+    "combination": "Shift+",
+    "key": "Left",
+    "id": 98
+  },
+  {
+    "name": "הרחב כותרת",
+    "combination": "Alt+Shift+",
+    "key": "=",
+    "id": 99
+  },
+  {
+    "name": "הרחב כותרת",
+    "combination": "Alt+Shift+",
+    "key": "Num +",
+    "id": 100
+  },
+  {
+    "name": "הרחב לסוף החלון",
+    "combination": "Alt+Ctrl+Shift+",
+    "key": "Page Down",
+    "id": 101
+  },
+  {
+    "name": "הרחב לסוף המסמך",
+    "combination": "Ctrl+Shift+",
+    "key": "End",
+    "id": 102
+  },
+  {
+    "name": "הרחב לסוף השורה",
+    "combination": "Shift+",
+    "key": "End",
+    "id": 103
+  },
+  {
+    "name": "הרחב לתחילת החלון",
+    "combination": "Alt+Ctrl+Shift+",
+    "key": "Page Up",
+    "id": 104
+  },
+  {
+    "name": "הרחב לתחילת המסמך",
+    "combination": "Ctrl+Shift+",
+    "key": "Home",
+    "id": 105
+  },
+  {
+    "name": "הרחב לתחילת השורה",
+    "combination": "Shift+",
+    "key": "Home",
+    "id": 106
+  },
+  {
+    "name": "השדה הבא",
+    "combination": "",
+    "key": "F11",
+    "id": 107
+  },
+  {
+    "name": "השדה הבא",
+    "combination": "Alt+",
+    "key": "F1",
+    "id": 108
+  },
+  {
+    "name": "השדה הקודם",
+    "combination": "Shift+",
+    "key": "F11",
+    "id": 109
+  },
+  {
+    "name": "השדה הקודם",
+    "combination": "Alt+Shift+",
+    "key": "F1",
+    "id": 110
+  },
+  {
+    "name": "התאם אישית קיצור מקשים",
+    "combination": "Alt+Ctrl+",
+    "key": "Num +",
+    "id": 111
+  },
+  {
+    "name": "חזור אחורה",
+    "combination": "Shift+",
+    "key": "F5",
+    "id": 112
+  },
+  {
+    "name": "חזור אחורה",
+    "combination": "Alt+Ctrl+",
+    "key": "Z",
+    "id": 113
+  },
+  {
+    "name": "חזור על החיפוש",
+    "combination": "Shift+",
+    "key": "F4",
+    "id": 114
+  },
+  {
+    "name": "חזור על החיפוש",
+    "combination": "Alt+Ctrl+",
+    "key": "Y",
+    "id": 115
+  },
+  {
+    "name": "חלונית החלת סגנון",
+    "combination": "Ctrl+Shift+",
+    "key": "S",
+    "id": 116
+  },
+  {
+    "name": "חלונית הניווט - חיפוש",
+    "combination": "Ctrl+",
+    "key": "F",
+    "id": 117
+  },
+  {
+    "name": "חלונית עיצוב",
+    "combination": "Alt+Ctrl+Shift+",
+    "key": "S",
+    "id": 118
+  },
+  {
+    "name": "חלוקה לרמות",
+    "combination": "Alt+Ctrl+",
+    "key": "O",
+    "id": 119
+  },
+  {
+    "name": "חלוקה לרמות - הצג שורה ראשונה",
+    "combination": "Alt+Shift+",
+    "key": "L",
+    "id": 120
+  },
+  {
+    "name": "ישר פיסקה",
+    "combination": "Ctrl+",
+    "key": "J",
+    "id": 121
+  },
+  {
+    "name": "ישר פיסקה",
+    "combination": "Ctrl+",
+    "key": "E",
+    "id": 122
+  },
+  {
+    "name": "ישר פיסקה",
+    "combination": "Ctrl+",
+    "key": "R",
+    "id": 123
+  },
+  {
+    "name": "ישר פיסקה",
+    "combination": "Ctrl+",
+    "key": "L",
+    "id": 124
+  },
+  {
+    "name": "כווץ בחירה",
+    "combination": "Shift+",
+    "key": "F8",
+    "id": 125
+  },
+  {
+    "name": "כווץ גופן",
+    "combination": "Ctrl+Shift+",
+    "key": ",",
+    "id": 126
+  },
+  {
+    "name": "כווץ גופן בנקודה אחת",
+    "combination": "Ctrl+",
+    "key": "]",
+    "id": 127
+  },
+  {
+    "name": "כווץ כותרת",
+    "combination": "Alt+Shift+",
+    "key": "-",
+    "id": 128
+  },
+  {
+    "name": "כווץ כותרת",
+    "combination": "Alt+Shift+",
+    "key": "Num -",
+    "id": 129
+  },
+  {
+    "name": "כניסה",
+    "combination": "Ctrl+",
+    "key": "M",
+    "id": 130
+  },
+  {
+    "name": "כניסה תלויה",
+    "combination": "Ctrl+",
+    "key": "T",
+    "id": 131
+  },
+  {
+    "name": "כתב עילי",
+    "combination": "Ctrl+Shift+",
+    "key": "=",
+    "id": 132
+  },
+  {
+    "name": "כתב תחתי",
+    "combination": "Ctrl+",
+    "key": "=",
+    "id": 133
+  },
+  {
+    "name": "מאפייני עיצוב",
+    "combination": "Shift+",
+    "key": "F1",
+    "id": 134
+  },
+  {
+    "name": "מאקרו",
+    "combination": "Alt+",
+    "key": "F8",
+    "id": 135
+  },
+  {
+    "name": "מודגש",
+    "combination": "Ctrl+",
+    "key": "B",
+    "id": 136
+  },
+  {
+    "name": "מודגש",
+    "combination": "Ctrl+Shift+",
+    "key": "B",
+    "id": 137
+  },
+  {
+    "name": "מוסתר",
+    "combination": "Ctrl+Shift+",
+    "key": "H",
+    "id": 138
+  },
+  {
+    "name": "מחק מילה",
+    "combination": "Ctrl+",
+    "key": "Del",
+    "id": 139
+  },
+  {
+    "name": "מחק מילה קודמת",
+    "combination": "Ctrl+",
+    "key": "Backspace",
+    "id": 140
+  },
+  {
+    "name": "מידע מערכת של Microsoft",
+    "combination": "Alt+Ctrl+",
+    "key": "F1",
+    "id": 141
+  },
+  {
+    "name": "מיזוג דואר למדפסת",
+    "combination": "Alt+Shift+",
+    "key": "M",
+    "id": 142
+  },
+  {
+    "name": "מיזוג דואר למסמך",
+    "combination": "Alt+Shift+",
+    "key": "N",
+    "id": 143
+  },
+  {
+    "name": "מילה ימינה",
+    "combination": "Ctrl+",
+    "key": "Right",
+    "id": 144
+  },
+  {
+    "name": "מילה שמאלה",
+    "combination": "Ctrl+",
+    "key": "Left",
+    "id": 145
+  },
+  {
+    "name": "מעבר טור",
+    "combination": "Ctrl+Shift+",
+    "key": "Return",
+    "id": 146
+  },
+  {
+    "name": "מעבר עמוד",
+    "combination": "Ctrl+",
+    "key": "Return",
+    "id": 147
+  },
+  {
+    "name": "מרווח בין פיסקאות",
+    "combination": "Ctrl+",
+    "key": "5",
+    "id": 148
+  },
+  {
+    "name": "מרווח בין פיסקאות",
+    "combination": "Ctrl+",
+    "key": "2",
+    "id": 149
+  },
+  {
+    "name": "מרווח בין פיסקאות",
+    "combination": "Ctrl+",
+    "key": "1",
+    "id": 150
+  },
+  {
+    "name": "נטוי",
+    "combination": "Ctrl+",
+    "key": "I",
+    "id": 151
+  },
+  {
+    "name": "נטוי",
+    "combination": "Ctrl+Shift+",
+    "key": "I",
+    "id": 152
+  },
+  {
+    "name": "נעל שדות",
+    "combination": "Ctrl+",
+    "key": "3",
+    "id": 153
+  },
+  {
+    "name": "נעל שדות",
+    "combination": "Ctrl+",
+    "key": "F11",
+    "id": 154
+  },
+  {
+    "name": "נקה",
+    "combination": "",
+    "key": "Del",
+    "id": 155
+  },
+  {
+    "name": "סגור חלונית",
+    "combination": "Alt+Shift+",
+    "key": "C",
+    "id": 156
+  },
+  {
+    "name": "סגור מסמך",
+    "combination": "Ctrl+",
+    "key": "W",
+    "id": 157
+  },
+  {
+    "name": "סגור מסמך",
+    "combination": "Ctrl+",
+    "key": "F4",
+    "id": 158
+  },
+  {
+    "name": "סגור קובץ או צא",
+    "combination": "Alt+",
+    "key": "F4",
+    "id": 159
+  },
+  {
+    "name": "סגנון",
+    "combination": "Alt+Ctrl+",
+    "key": "1",
+    "id": 160
+  },
+  {
+    "name": "סגנון",
+    "combination": "Alt+Ctrl+",
+    "key": "2",
+    "id": 161
+  },
+  {
+    "name": "סגנון",
+    "combination": "Alt+Ctrl+",
+    "key": "3",
+    "id": 162
+  },
+  {
+    "name": "סגנון",
+    "combination": "Ctrl+Shift+",
+    "key": "L",
+    "id": 163
+  },
+  {
+    "name": "סגנון רגיל",
+    "combination": "Ctrl+Shift+",
+    "key": "N",
+    "id": 164
+  },
+  {
+    "name": "סגנון רגיל",
+    "combination": "Alt+Shift+",
+    "key": "Clear (Num 5)‎",
+    "id": 165
+  },
+  {
+    "name": "סוף החלון",
+    "combination": "Alt+Ctrl+",
+    "key": "Page Down",
+    "id": 166
+  },
+  {
+    "name": "סוף המסמך",
+    "combination": "Ctrl+",
+    "key": "End",
+    "id": 167
+  },
+  {
+    "name": "סוף השורה",
+    "combination": "",
+    "key": "End",
+    "id": 168
+  },
+  {
+    "name": "סוף עמודה",
+    "combination": "Alt+",
+    "key": "Page Down",
+    "id": 169
+  },
+  {
+    "name": "סוף עמודה",
+    "combination": "Alt+Shift+",
+    "key": "Page Down",
+    "id": 170
+  },
+  {
+    "name": "סוף שורה",
+    "combination": "Alt+",
+    "key": "End",
+    "id": 171
+  },
+  {
+    "name": "סוף שורה",
+    "combination": "Alt+Shift+",
+    "key": "End",
+    "id": 172
+  },
+  {
+    "name": "סימון ערך אינדקס",
+    "combination": "Alt+Shift+",
+    "key": "X",
+    "id": 173
+  },
+  {
+    "name": "סימניה",
+    "combination": "Ctrl+Shift+",
+    "key": "F5",
+    "id": 174
+  },
+  {
+    "name": "סמן ערך בתוכן העניינים",
+    "combination": "Alt+Shift+",
+    "key": "O",
+    "id": 175
+  },
+  {
+    "name": "סמן ציטוט",
+    "combination": "Alt+Shift+",
+    "key": "I",
+    "id": 176
+  },
+  {
+    "name": "ספירה מחדש של ספירת מילים",
+    "combination": "Ctrl+Shift+",
+    "key": "R",
+    "id": 177
+  },
+  {
+    "name": "עבור אל",
+    "combination": "Ctrl+",
+    "key": "G",
+    "id": 178
+  },
+  {
+    "name": "עבור אל",
+    "combination": "",
+    "key": "F5",
+    "id": 179
+  },
+  {
+    "name": "עבור חזרה באינטרנט",
+    "combination": "Alt+",
+    "key": "Left",
+    "id": 180
+  },
+  {
+    "name": "עבור לבחירה",
+    "combination": "Alt+Ctrl+",
+    "key": "Home",
+    "id": 181
+  },
+  {
+    "name": "עבור לשכבת האובייקט",
+    "combination": "Alt+Ctrl+",
+    "key": "5",
+    "id": 182
+  },
+  {
+    "name": "עבור קדימה באינטרנט",
+    "combination": "Alt+",
+    "key": "Right",
+    "id": 183
+  },
+  {
+    "name": "עדכן מקור",
+    "combination": "Ctrl+Shift+",
+    "key": "F7",
+    "id": 184
+  },
+  {
+    "name": "עדכן עיצוב אוטומטי",
+    "combination": "Alt+Ctrl+",
+    "key": "U",
+    "id": 185
+  },
+  {
+    "name": "עדכן שדות",
+    "combination": "",
+    "key": "F9",
+    "id": 186
+  },
+  {
+    "name": "עדכן שדות",
+    "combination": "Alt+Shift+",
+    "key": "U",
+    "id": 187
+  },
+  {
+    "name": "עזרה",
+    "combination": "",
+    "key": "F1",
+    "id": 188
+  },
+  {
+    "name": "עיין בפריט הבא",
+    "combination": "Ctrl+",
+    "key": "Page Down",
+    "id": 189
+  },
+  {
+    "name": "עיין בפריט הקודם",
+    "combination": "Ctrl+",
+    "key": "Page Up",
+    "id": 190
+  },
+  {
+    "name": "עיצוב אוטומטי",
+    "combination": "Alt+Ctrl+",
+    "key": "K",
+    "id": 191
+  },
+  {
+    "name": "עיצוב גופן",
+    "combination": "Ctrl+",
+    "key": "D",
+    "id": 192
+  },
+  {
+    "name": "עיצוב פיסקה",
+    "combination": "Ctrl+",
+    "key": "Q",
+    "id": 193
+  },
+  {
+    "name": "עמוד",
+    "combination": "Alt+Ctrl+",
+    "key": "P",
+    "id": 194
+  },
+  {
+    "name": "עמוד כלפי מטה",
+    "combination": "",
+    "key": "Page Down",
+    "id": 195
+  },
+  {
+    "name": "עמוד כלפי מעלה",
+    "combination": "",
+    "key": "Page Up",
+    "id": 196
+  },
+  {
+    "name": "ערוך",
+    "combination": "Alt+Shift+",
+    "key": "R",
+    "id": 197
+  },
+  {
+    "name": "ערוך מקור נתונים של מיזוג דואר",
+    "combination": "Alt+Shift+",
+    "key": "E",
+    "id": 198
+  },
+  {
+    "name": "פיסקה למטה",
+    "combination": "Ctrl+",
+    "key": "Down",
+    "id": 199
+  },
+  {
+    "name": "פיסקה למעלה",
+    "combination": "Ctrl+",
+    "key": "Up",
+    "id": 200
+  },
+  {
+    "name": "פיצול מסמך",
+    "combination": "Alt+Ctrl+",
+    "key": "S",
+    "id": 201
+  },
+  {
+    "name": "פתח",
+    "combination": "Ctrl+",
+    "key": "F12",
+    "id": 202
+  },
+  {
+    "name": "פתח",
+    "combination": "Alt+Ctrl+",
+    "key": "F2",
+    "id": 203
+  },
+  {
+    "name": "פתח או סגור פיסקה למעלה",
+    "combination": "Ctrl+",
+    "key": "0",
+    "id": 204
+  },
+  {
+    "name": "פתח באמצעות Backstage",
+    "combination": "Ctrl+",
+    "key": "O",
+    "id": 205
+  },
+  {
+    "name": "צור טקסט אוטומטי",
+    "combination": "Alt+",
+    "key": "F3",
+    "id": 206
+  },
+  {
+    "name": "קדם מיתאר",
+    "combination": "Alt+Shift+",
+    "key": "Left",
+    "id": 207
+  },
+  {
+    "name": "קו תחתון",
+    "combination": "Ctrl+",
+    "key": "U",
+    "id": 208
+  },
+  {
+    "name": "קו תחתון",
+    "combination": "Ctrl+Shift+",
+    "key": "U",
+    "id": 209
+  },
+  {
+    "name": "קו תחתון כפול",
+    "combination": "Ctrl+Shift+",
+    "key": "D",
+    "id": 210
+  },
+  {
+    "name": "קו תחתון מתחת למילה",
+    "combination": "Ctrl+Shift+",
+    "key": "W",
+    "id": 211
+  },
+  {
+    "name": "קודי שדות",
+    "combination": "Alt+",
+    "key": "F9",
+    "id": 212
+  },
+  {
+    "name": "קפוץ_לכרטיס_הערה",
+    "combination": "Alt+",
+    "key": "F12",
+    "id": 213
+  },
+  {
+    "name": "קרא בקול רם",
+    "combination": "Alt+Ctrl+",
+    "key": "Space",
+    "id": 214
+  },
+  {
+    "name": "רגיל",
+    "combination": "Alt+Ctrl+",
+    "key": "N",
+    "id": 215
+  },
+  {
+    "name": "רישיות בלבד",
+    "combination": "Ctrl+Shift+",
+    "key": "A",
+    "id": 216
+  },
+  {
+    "name": "רישיות מוקטנות",
+    "combination": "Ctrl+Shift+",
+    "key": "K",
+    "id": 217
+  },
+  {
+    "name": "רשימת ספירת מילים",
+    "combination": "Ctrl+Shift+",
+    "key": "G",
+    "id": 218
+  },
+  {
+    "name": "שגיאת האיות הבאה",
+    "combination": "Alt+",
+    "key": "F7",
+    "id": 219
+  },
+  {
+    "name": "שדה זמן",
+    "combination": "Alt+Shift+",
+    "key": "T",
+    "id": 220
+  },
+  {
+    "name": "שדה מיזוג",
+    "combination": "Alt+Shift+",
+    "key": "F",
+    "id": 221
+  },
+  {
+    "name": "שדה עמוד",
+    "combination": "Alt+Shift+",
+    "key": "P",
+    "id": 222
+  },
+  {
+    "name": "שדה רשימה ממוספרת",
+    "combination": "Alt+Ctrl+",
+    "key": "L",
+    "id": 223
+  },
+  {
+    "name": "שדה תאריך",
+    "combination": "Alt+Shift+",
+    "key": "D",
+    "id": 224
+  },
+  {
+    "name": "שורה למטה",
+    "combination": "",
+    "key": "Down",
+    "id": 225
+  },
+  {
+    "name": "שורה למעלה",
+    "combination": "",
+    "key": "Up",
+    "id": 226
+  },
+  {
+    "name": "שחזר יישום",
+    "combination": "Alt+",
+    "key": "F5",
+    "id": 227
+  },
+  {
+    "name": "שחזר מסמך",
+    "combination": "Ctrl+",
+    "key": "F5",
+    "id": 228
+  },
+  {
+    "name": "שמור",
+    "combination": "Ctrl+",
+    "key": "S",
+    "id": 229
+  },
+  {
+    "name": "שמור",
+    "combination": "Shift+",
+    "key": "F12",
+    "id": 230
+  },
+  {
+    "name": "שמור",
+    "combination": "Alt+Shift+",
+    "key": "F2",
+    "id": 231
+  },
+  {
+    "name": "שמירה בשם",
+    "combination": "",
+    "key": "F12",
+    "id": 232
+  },
+  {
+    "name": "שנה מצב של תצוגת שדה",
+    "combination": "Shift+",
+    "key": "F9",
+    "id": 233
+  },
+  {
+    "name": "שנה רישיות",
+    "combination": "Shift+",
+    "key": "F3",
+    "id": 234
+  },
+  {
+    "name": "תו איפוס",
+    "combination": "Ctrl+",
+    "key": "Space",
+    "id": 235
+  },
+  {
+    "name": "תו איפוס",
+    "combination": "Ctrl+Shift+",
+    "key": "Z",
+    "id": 236
+  },
+  {
+    "name": "תו הפרדה בין סגנונות",
+    "combination": "Alt+Ctrl+",
+    "key": "Return",
+    "id": 237
+  },
+  {
+    "name": "תו ימינה",
+    "combination": "",
+    "key": "Right",
+    "id": 238
+  },
+  {
+    "name": "תו שמאלה",
+    "combination": "",
+    "key": "Left",
+    "id": 239
+  },
+  {
+    "name": "תחילת החלון",
+    "combination": "Alt+Ctrl+",
+    "key": "Page Up",
+    "id": 240
+  },
+  {
+    "name": "תחילת המסמך",
+    "combination": "Ctrl+",
+    "key": "Home",
+    "id": 241
+  },
+  {
+    "name": "תחילת השורה",
+    "combination": "",
+    "key": "Home",
+    "id": 242
+  },
+  {
+    "name": "תחילת עמודה",
+    "combination": "Alt+",
+    "key": "Page Up",
+    "id": 243
+  },
+  {
+    "name": "תחילת עמודה",
+    "combination": "Alt+Shift+",
+    "key": "Page Up",
+    "id": 244
+  },
+  {
+    "name": "תחילת שורה",
+    "combination": "Alt+",
+    "key": "Home",
+    "id": 245
+  },
+  {
+    "name": "תחילת שורה",
+    "combination": "Alt+Shift+",
+    "key": "Home",
+    "id": 246
+  },
+  {
+    "name": "תרגם",
+    "combination": "Alt+Shift+",
+    "key": "F7",
+    "id": 247
+  }
+]
