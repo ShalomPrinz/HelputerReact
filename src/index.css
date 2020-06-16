@@ -21,7 +21,7 @@ code {
 }
 
 .scroll-down-list {
-  height: 80vh;
+  height: 70vh;
   overflow-x: hidden;
   overflow-y: auto;
 }

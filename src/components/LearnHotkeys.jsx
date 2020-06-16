@@ -6,26 +6,47 @@ import KeyBoard, {
   notValidKeyMessage,
 } from "./common/Keyboard";
 import ListGroup from "./common/ListGroup";
-import hotkeys, { explanation } from "../services/hotkeysService";
+import Search from "./common/Search";
+import { search } from "../utils/array";
+import hotkeys, {
+  explanation,
+  fieldToSearch,
+} from "../services/hotkeysService";
 
 function LearnHotkeys() {
+  const [query, setQuery] = useState("");
   const [hotkey, setHotkey] = useState(hotkeys[0]);
+
   const { combination, id, key, name } = hotkey;
   const target = combination + key;
+
   const onListenComplete = () => {
     toast.success("Success!", {
       position: "top-center",
     });
   };
 
+  const filteredList = search(fieldToSearch, hotkeys, query);
+  const found = filteredList.length !== 0;
+
   return (
     <div className="row">
-      <div className="border-top col-3 mt-4 scroll-down-list">
-        <ListGroup
-          items={hotkeys}
-          onItemSelect={(hotkey) => setHotkey(hotkey)}
-          selectedItemValue={id}
-        />
+      <div className="col-3 mt-4">
+        <Search query={query} onChange={(q) => setQuery(q)} />
+        <div className="border-bottom border-top scroll-down-list">
+          {found && (
+            <ListGroup
+              items={filteredList}
+              onItemSelect={(hotkey) => setHotkey(hotkey)}
+              selectedItemValue={id}
+            />
+          )}
+          {!found && (
+            <p className="mt-2 text-center">
+              No hotkeys found matching your query.
+            </p>
+          )}
+        </div>
       </div>
       <div className="col text-center">
         <h1 className="mt-3">{name}</h1>

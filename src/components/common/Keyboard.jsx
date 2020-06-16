@@ -133,6 +133,7 @@ const tryValidateKeysString = (string) => {
   return string.replace("Page Down", "pagedown").replace("Page Up", "pageup");
 };
 
+const allKeys = Object.keys(AllKeys);
 export const isValidKeysString = (string) => {
   const keys = tryValidateKeysString(string)
     .split("+")
@@ -140,7 +141,7 @@ export const isValidKeysString = (string) => {
 
   let valid = true;
   keys.forEach((k) => {
-    if (!Object.keys(AllKeys).includes(k)) valid = false;
+    if (!allKeys.includes(k)) valid = false;
   });
   return valid;
 };
