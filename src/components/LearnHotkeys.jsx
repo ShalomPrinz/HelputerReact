@@ -20,14 +20,19 @@ function LearnHotkeys(props) {
 
   const [query, setQuery] = useState("");
   const [hotkey, setHotkey] = useState(selectedHotkey || hotkeys[0]);
+  const [toasting, setToasting] = useState(false);
 
   const { combination, id, key, name } = hotkey;
   const target = combination + key;
 
   const onListenComplete = () => {
-    toast.success("Success!", {
-      position: "top-center",
-    });
+    if (!toasting) {
+      toast.success("Success!", {
+        onClose: () => setToasting(false),
+        position: "top-center",
+      });
+      setToasting(true);
+    }
   };
 
   const filteredList = search(fieldToSearch, hotkeys, query);

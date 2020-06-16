@@ -62,7 +62,11 @@ const AppKeyBoard = ({ listen, onListenComplete }) => {
         onSelect={(key) => setLayout(langs[key].value)}
         options={langs}
       />
-      <Keyboard {...keyboardOptions} baseClass="keyboard" layoutName={layout} />
+      <Keyboard
+        {...keyboardOptions}
+        baseClass="simple-keyboard"
+        layoutName={layout}
+      />
     </>
   );
 };
@@ -93,7 +97,7 @@ const keyboardOptions = {
       "{tab} q w e r t y u i o p [ ] \\",
       "{capslock} a s d f g h j k l ; ' {enter}",
       "{shiftleft} z x c v b n m , . / {shiftright}",
-      "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+      "{controlleft} {altleft} {metaleft} {space} {altright} {controlright}",
     ],
     caps: [
       "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
@@ -101,7 +105,7 @@ const keyboardOptions = {
       "{tab} Q W E R T Y U I O P { } |",
       '{capslock} A S D F G H J K L : " {enter}',
       "{shiftleft} Z X C V B N M < > ? {shiftright}",
-      "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+      "{controlleft} {altleft} {metaleft} {space} {altright} {controlright}",
     ],
     hebrew: [
       "{escape} {f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12}",
@@ -109,7 +113,7 @@ const keyboardOptions = {
       "{tab} / ' ק ר א ט ו ן ם פ [ ] \\",
       "{capslock} ש ד ג כ ע י ח ל ך ף , {enter}",
       "{shiftleft} ז ס ב ה נ מ צ ת ץ . {shiftright}",
-      "{controlleft} {altleft} {metaleft} {space} {metaright} {altright}",
+      "{controlleft} {altleft} {metaleft} {space} {altright} {controlright}",
     ],
   },
   display: {

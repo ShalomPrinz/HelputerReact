@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ToastContainer />
+      <ToastContainer limit={1} />
       <main className="container">
         <div className="content">
           <Switch>

@@ -25,3 +25,15 @@ code {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.simple-keyboard .hg-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.simple-keyboard .hg-button:hover {
+  transform: scale(1.6);
+}
+
+.simple-keyboard .hg-button:active {
+  transform: scale(1.2);
+}
