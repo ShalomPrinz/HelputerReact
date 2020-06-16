@@ -19,7 +19,8 @@ const TableBody = ({ data, columns }) => {
   );
 };
 
-const renderCell = (item, column) => _.get(item, column.path);
+const renderCell = (item, column) =>
+  column.content ? column.content(item) : _.get(item, column.path);
 
 const createKey = (item, column) => item.id + column.path;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import ConditionalLink from "./ConditionalLink";
 import ListItem from "./ListItem";
@@ -26,6 +26,12 @@ const ListGroup = ({
   const isActiveSelection = (value, searching) =>
     value === selectedItemValue && !searching;
 
+  const ref = useRef();
+  useEffect(
+    () => ref && ref.current && ref.current.scrollIntoView({ block: "center" }),
+    []
+  );
+
   return (
     <ul className={`list-group mb-${marginBottom} mt-${marginTop}`}>
       <ConditionalLink
@@ -40,6 +46,7 @@ const ListGroup = ({
           }
           handleSelect={() => handleItemSelect(item, onItemSelect)}
           item={item}
+          {...(item.id === selectedItemValue && { itemRef: ref })}
           key={item[valueProperty]}
         />
       ))}

@@ -7,6 +7,7 @@ function ListItem({
   handleDoubleSelect,
   handleSelect,
   item,
+  itemRef,
   selected,
 }) {
   const [active, setActive] = useState(false);
@@ -38,6 +39,7 @@ function ListItem({
       className={`list-group-item clickable ${current} ${active} ${className}`}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
+      ref={itemRef}
     >
       <Popover item={item} />
     </li>

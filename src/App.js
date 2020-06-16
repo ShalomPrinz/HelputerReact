@@ -33,6 +33,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route path={lessonsUrl} component={Lessons} />
+            <Route path={learnHotkeysUrl + "/:name"} component={LearnHotkeys} />
             <Route path={learnHotkeysUrl} component={LearnHotkeys} />
             <Route path={hotkeysUrl} component={Hotkeys} />
             <Route path={autopilotUrl + "/:subject"} component={Pilot} />

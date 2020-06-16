@@ -13,9 +13,13 @@ import hotkeys, {
   fieldToSearch,
 } from "../services/hotkeysService";
 
-function LearnHotkeys() {
+function LearnHotkeys(props) {
+  const selectedName = props.match.params.name;
+  const selectedHotkey =
+    selectedName && hotkeys.find((h) => h.name === selectedName);
+
   const [query, setQuery] = useState("");
-  const [hotkey, setHotkey] = useState(hotkeys[0]);
+  const [hotkey, setHotkey] = useState(selectedHotkey || hotkeys[0]);
 
   const { combination, id, key, name } = hotkey;
   const target = combination + key;
