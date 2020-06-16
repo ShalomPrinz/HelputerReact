@@ -37,7 +37,7 @@ function LearnHotkeys(props) {
     <div className="row">
       <div className="col-3 mt-4">
         <Search query={query} onChange={(q) => setQuery(q)} />
-        <div className="border-bottom border-top scroll-down-list">
+        <div className="border-bottom border-top scrollable">
           {found && (
             <ListGroup
               items={filteredList}

@@ -20,8 +20,8 @@ code {
   direction: rtl;
 }
 
-.scroll-down-list {
-  height: 70vh;
+.scrollable {
+  height: 65vh;
   overflow-x: hidden;
   overflow-y: auto;
 }

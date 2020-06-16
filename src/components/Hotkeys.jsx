@@ -29,7 +29,7 @@ const Hotkeys = () => {
       <div className="mx-auto w-50">
         <Search value={query} onChange={(q) => setQuery(q)} />
       </div>
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={data} scrollable />
       {data.length === 0 && (
         <p className="text-center">No hotkeys found matching your query.</p>
       )}
