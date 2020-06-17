@@ -8,16 +8,19 @@ import Popover from "./common/Popover";
 
 const LessonHotkey = ({ item: lesson, selected }) => {
   const { hotkey, description } = getHotkey(lesson);
-  const icon = <Icon color={selected && "white"} icon={icons.faLightbulb} />;
+  const color = selected ? "white" : undefined;
+  const icon = <Icon color={color} icon={icons.faLightbulb} />;
 
   return (
-    <Popover description={description} item={lesson}>
-      {hotkey ? (
-        <Link to={learnHotkeysUrl + "/" + hotkey.name}>{icon}</Link>
-      ) : (
-        icon
-      )}
-    </Popover>
+    <div className="ml-2">
+      <Popover description={description} item={lesson}>
+        {hotkey ? (
+          <Link to={learnHotkeysUrl + "/" + hotkey.name}>{icon}</Link>
+        ) : (
+          icon
+        )}
+      </Popover>
+    </div>
   );
 };
 

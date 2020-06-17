@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import pilotsService, { finished } from "../services/pilotsService";
 import http from "../services/httpService";
+import LessonHotkey from "./LessonHotkey";
 import ProgressBar from "./common/ProgressBar";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
@@ -52,7 +53,9 @@ function Pilot(props) {
         className="mx-auto my-5"
         handleSelect={() => http.paint(currentLesson)}
         item={currentLesson}
-      />
+      >
+        <LessonHotkey item={currentLesson} />
+      </ListItem>
       <div className="row justify-content-center">
         <Button disabled={index === lastIndex} onClick={handleNext}>
           Next

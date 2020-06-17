@@ -14,6 +14,7 @@ function Lessons() {
       className={getGridSize(size[0])}
       description={ultimate.description}
       exactUrl
+      onItemSelect={() => {}}
       onKitSelectUrl={ultimatePilotUrl}
       subject={ultimate.title}
     />
@@ -22,6 +23,7 @@ function Lessons() {
   return (
     <Kits
       FirstKit={ultimatePilotKit}
+      hotkeys
       lists={pilots}
       onKitSelectUrl={autopilotUrl}
     />

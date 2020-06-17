@@ -26,6 +26,7 @@ function Kits({
     return [items, description];
   };
 
+  let key = -1;
   return (
     <>
       <div className="mx-auto w-50">
@@ -41,6 +42,7 @@ function Kits({
             <LessonsKit
               className={getGridSize(size[0])}
               hotkeys={hotkeys}
+              key={++key}
               {...{
                 description,
                 items,

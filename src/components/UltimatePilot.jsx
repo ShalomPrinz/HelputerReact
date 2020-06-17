@@ -5,6 +5,7 @@ import http from "../services/httpService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
 import { getOptions } from "./UltimatePilotContainer";
+import LessonHotkey from "./LessonHotkey";
 
 function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   const [index, setIndex] = useState(0);
@@ -53,7 +54,9 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
         className="mx-auto my-5"
         handleSelect={() => http.paint(currentLesson)}
         item={currentLesson}
-      />
+      >
+        <LessonHotkey item={currentLesson} />
+      </ListItem>
       <ul className="my-4 list-group list-group-horizontal justify-content-center">
         {isLastItem &&
           options.map((l) => (
