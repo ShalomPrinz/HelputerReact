@@ -11,6 +11,7 @@ const default_onItemSelect = (item) => http.paint(item);
 function Kits({
   fieldToSearch,
   FirstKit,
+  hotkeys,
   lists,
   onItemSelect = default_onItemSelect,
   onKitSelectUrl,
@@ -39,6 +40,7 @@ function Kits({
           return (
             <LessonsKit
               className={getGridSize(size[0])}
+              hotkeys={hotkeys}
               {...{
                 description,
                 items,

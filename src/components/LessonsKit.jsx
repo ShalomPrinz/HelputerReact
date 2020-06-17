@@ -4,8 +4,10 @@ import ConditionalLink from "./common/ConditionalLink";
 import ListGroup from "./common/ListGroup";
 import ProgressBar from "./common/ProgressBar";
 import pilots from "../services/pilotsService";
+import LessonHotkey from "./LessonHotkey";
 
 function LessonsKit({
+  hotkeys,
   className,
   description,
   exactUrl,
@@ -31,6 +33,7 @@ function LessonsKit({
       {pilot && <ProgressBar progress={Math.round(pilot[2])} undesigned />}
       <ListGroup
         description={description}
+        itemChild={hotkeys && <LessonHotkey />}
         items={items}
         marginTop={pilot ? 0 : undefined}
         onItemSelect={onItemSelect}

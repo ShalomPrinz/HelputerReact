@@ -2,8 +2,8 @@ import React from "react";
 import Popover from "react-bootstrap/Popover";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
-function AppPopover({ item }) {
-  const { name, description = name, type } = item;
+function AppPopover({ children, description, item }) {
+  const { name, type } = item;
 
   const overlay = (
     <Popover id="popover-basic">
@@ -19,7 +19,7 @@ function AppPopover({ item }) {
       overlay={overlay}
     >
       <div className="text-center" data-name={name} data-type={type}>
-        {description}
+        {children || name}
       </div>
     </OverlayTrigger>
   );

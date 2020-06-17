@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Popover from "./Popover";
 
 function ListItem({
   autolist,
+  children,
   className = "",
   handleDoubleSelect,
   handleSelect,
@@ -36,12 +36,13 @@ function ListItem({
 
   const li = (
     <li
-      className={`list-group-item clickable ${current} ${active} ${className}`}
+      className={`list-group-item clickable d-flex ${current} ${active} ${className}`}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
       ref={itemRef}
     >
-      <Popover item={item} />
+      <div className="mx-auto text-center">{item.name}</div>
+      {children}
     </li>
   );
 

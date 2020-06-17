@@ -1,17 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
-  faChevronLeft,
-  faChevronRight,
+  faLightbulb,
 };
 
-function Icon({ className = "", icon, size = "5x" }) {
-  return <FontAwesomeIcon {...{ className, icon, size }} />;
+function Icon({ color, icon }) {
+  return <FontAwesomeIcon {...{ color, icon }} />;
 }
 
 export default Icon;

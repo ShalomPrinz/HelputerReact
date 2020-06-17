@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { cloneElement, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import ConditionalLink from "./ConditionalLink";
 import ListItem from "./ListItem";
 
 const ListGroup = ({
   description,
+  itemChild,
   items,
   marginBottom,
   marginTop,
@@ -46,9 +47,15 @@ const ListGroup = ({
           }
           handleSelect={() => handleItemSelect(item, onItemSelect)}
           item={item}
-          {...(item.id === selectedItemValue && { itemRef: ref })}
+          {...(isActiveSelection(item.id, searching) && { itemRef: ref })}
           key={item[valueProperty]}
-        />
+        >
+          {itemChild &&
+            cloneElement(itemChild, {
+              item: item,
+              selected: isActiveSelection(item.id, searching),
+            })}
+        </ListItem>
       ))}
     </ul>
   );

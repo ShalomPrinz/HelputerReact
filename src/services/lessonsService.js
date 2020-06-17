@@ -1,5 +1,6 @@
 import { randomProperty } from "../utils/object";
 import { shuffle } from "../utils/array";
+import hotkeys from "./hotkeysService";
 
 const lessonsLists = {
   "עיצוב טקסט": [
@@ -128,6 +129,15 @@ export const randomLessons = () => {
     ([subject, list]) => (all = all.concat(list))
   );
   return shuffle(all);
+};
+
+export const getHotkey = (lesson) => {
+  const hotkey = hotkeys.find((h) => h.name === lesson.name) || null;
+  const description = hotkey
+    ? "לחץ על מנת לעבור לקיצור המקשים"
+    : "לא נמצא קיצור מקשים לפעולה זו";
+
+  return { hotkey, description };
 };
 
 export const getLesson = (topic, id) =>
