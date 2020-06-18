@@ -1,0 +1,286 @@
+{
+  "עיצוב טקסט": [
+    {
+      "id": 1,
+      "name": "גודל גופן",
+      "type": "ComboBox"
+    },
+    {
+      "id": 2,
+      "name": "הגדל גופן",
+      "type": "Button"
+    },
+    {
+      "id": 3,
+      "name": "כווץ גופן",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "גופן",
+      "type": "ComboBox"
+    },
+    {
+      "id": 5,
+      "name": "מודגש",
+      "type": "Button"
+    },
+    {
+      "id": 6,
+      "name": "נטוי",
+      "type": "Button"
+    },
+    {
+      "id": 7,
+      "name": "קו תחתון",
+      "type": "SplitButton"
+    }
+  ],
+  "פעולות בסיסיות": [
+    {
+      "id": 1,
+      "name": "ישר לימין",
+      "type": "Button"
+    },
+    {
+      "id": 2,
+      "name": "מרכז",
+      "type": "Button"
+    },
+    {
+      "id": 3,
+      "name": "ישר לשמאל",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "ישר לשני הצדדים",
+      "type": "Button"
+    },
+    {
+      "id": 5,
+      "name": "העתק",
+      "type": "Button"
+    },
+    {
+      "id": 6,
+      "name": "הדבק",
+      "type": "SplitButton"
+    },
+    {
+      "id": 7,
+      "name": "גזור",
+      "type": "Button"
+    },
+    {
+      "id": 8,
+      "name": "בטל",
+      "regex": "^בטל|אין אפשרות לבטל",
+      "type": "SplitButton"
+    }
+  ],
+  "עיצוב בצבע": [
+    {
+      "id": 1,
+      "name": "צבע גופן",
+      "type": "SplitButton"
+    },
+    {
+      "id": 2,
+      "name": "צבע סימון טקסט",
+      "type": "SplitButton"
+    },
+    {
+      "id": 3,
+      "name": "מברשת עיצוב",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "הצללה",
+      "type": "SplitButton"
+    },
+    {
+      "id": 5,
+      "name": "אפקטי טקסט וטיפוגרפיה",
+      "type": "MenuItem"
+    }
+  ],
+  "רשימה": [
+    {
+      "id": 1,
+      "name": "מספור",
+      "type": "SplitButton"
+    },
+    {
+      "id": 2,
+      "name": "תבליטים",
+      "type": "SplitButton"
+    },
+    {
+      "id": 3,
+      "name": "רשימה מדורגת",
+      "type": "MenuItem"
+    },
+    {
+      "id": 4,
+      "name": "מיין",
+      "type": "Button"
+    }
+  ],
+  "כותרת": [
+    {
+      "id": 1,
+      "name": "כותרת טקסט",
+      "type": "ListItem"
+    },
+    {
+      "id": 2,
+      "name": "כותרת משנה",
+      "type": "ListItem"
+    },
+    {
+      "id": 3,
+      "name": "הדגשה חזקה",
+      "type": "ListItem"
+    },
+    {
+      "id": 4,
+      "name": "ציטוט",
+      "type": "ListItem"
+    },
+    {
+      "id": 5,
+      "name": "הפניה עדינה",
+      "type": "ListItem"
+    },
+    {
+      "id": 6,
+      "name": "כותר הספר",
+      "type": "ListItem"
+    }
+  ],
+  "ניהול מסמך": [
+    {
+      "id": 1,
+      "name": "שמור",
+      "type": "Button"
+    },
+    {
+      "id": 2,
+      "name": "פתח",
+      "type": "Button"
+    },
+    {
+      "id": 3,
+      "name": "סגור",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "שינוי גודל תצוגה",
+      "type": "Slider"
+    },
+    {
+      "id": 5,
+      "name": "חפש",
+      "type": "SplitButton"
+    },
+    {
+      "id": 6,
+      "name": "החלפה",
+      "type": "Button"
+    },
+    {
+      "id": 7,
+      "name": "בחר",
+      "type": "MenuItem"
+    }
+  ],
+  "טקסט מתקדם": [
+    {
+      "id": 1,
+      "name": "קו חוצה",
+      "type": "Button"
+    },
+    {
+      "id": 2,
+      "name": "כתב תחתי",
+      "type": "Button"
+    },
+    {
+      "id": 3,
+      "name": "כתב עילי",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "מברשת עיצוב",
+      "type": "Button"
+    },
+    {
+      "id": 5,
+      "name": "נקה עיצוב",
+      "type": "Button"
+    },
+    {
+      "id": 6,
+      "name": "שנה רישיות",
+      "type": "MenuItem"
+    }
+  ],
+  "עיצוב פסקאות": [
+    {
+      "id": 1,
+      "name": "הקטן כניסה",
+      "type": "Button"
+    },
+    {
+      "id": 2,
+      "name": "הגדל כניסה",
+      "type": "Button"
+    },
+    {
+      "id": 3,
+      "name": "משמאל לימין",
+      "type": "Button"
+    },
+    {
+      "id": 4,
+      "name": "מימין לשמאל",
+      "type": "Button"
+    },
+    {
+      "id": 5,
+      "name": "מרווח בין שורות ופסקאות",
+      "type": "MenuItem"
+    }
+  ],
+  "עריכה מתקדמת": [
+    {
+      "id": 1,
+      "name": "לוח",
+      "type": "Group"
+    },
+    {
+      "id": 2,
+      "name": "גופן",
+      "type": "Group"
+    },
+    {
+      "id": 3,
+      "name": "פיסקה",
+      "type": "Group"
+    },
+    {
+      "id": 4,
+      "name": "סגנונות",
+      "type": "Group"
+    },
+    {
+      "id": 5,
+      "name": "עריכה",
+      "type": "Group"
+    }
+  ]
+}
