@@ -1,20 +1,20 @@
 [
   {
-    "name": "CopyToFrom",
-    "combination": "Shift+",
-    "key": "F2",
-    "id": 0
-  },
-  {
-    "name": "RR של אוצר מילים",
-    "combination": "Shift+",
-    "key": "F7",
-    "id": 1
-  },
-  {
     "name": "VBCode",
     "combination": "Alt+",
     "key": "F11",
+    "id": 0
+  },
+  {
+    "name": "העתקה חד פעמית",
+    "combination": "Shift+",
+    "key": "F2",
+    "id": 1
+  },
+  {
+    "name": "אוצר מילים",
+    "combination": "Shift+",
+    "key": "F7",
     "id": 2
   },
   {
@@ -726,25 +726,25 @@
     "id": 120
   },
   {
-    "name": "ישר פיסקה",
+    "name": "ישר לשני הצדדים",
     "combination": "Ctrl+",
     "key": "J",
     "id": 121
   },
   {
-    "name": "ישר פיסקה",
+    "name": "מרכז",
     "combination": "Ctrl+",
     "key": "E",
     "id": 122
   },
   {
-    "name": "ישר פיסקה",
+    "name": "ישר לימין",
     "combination": "Ctrl+",
     "key": "R",
     "id": 123
   },
   {
-    "name": "ישר פיסקה",
+    "name": "ישר לשמאל",
     "combination": "Ctrl+",
     "key": "L",
     "id": 124

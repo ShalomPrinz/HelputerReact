@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "גודל גופן",
+      "hotkey": "בחירת גודל גופן",
       "type": "ComboBox"
     },
     {
@@ -70,6 +71,7 @@
     {
       "id": 7,
       "name": "גזור",
+      "hotkey": "גזירה",
       "type": "Button"
     },
     {
@@ -93,6 +95,7 @@
     {
       "id": 3,
       "name": "מברשת עיצוב",
+      "hotkey": "העתק עיצוב",
       "type": "Button"
     },
     {
@@ -125,6 +128,7 @@
     {
       "id": 4,
       "name": "מיין",
+      "regex": "^מיין...$",
       "type": "Button"
     }
   ],
@@ -132,31 +136,31 @@
     {
       "id": 1,
       "name": "כותרת טקסט",
+      "hotkey": "הצג כותרת1",
       "type": "ListItem"
     },
     {
       "id": 2,
       "name": "כותרת משנה",
+      "hotkey": "הצג כותרת2",
       "type": "ListItem"
     },
     {
       "id": 3,
       "name": "הדגשה חזקה",
+      "hotkey": "הצג כותרת3",
       "type": "ListItem"
     },
     {
       "id": 4,
       "name": "ציטוט",
+      "hotkey": "הצג כותרת4",
       "type": "ListItem"
     },
     {
       "id": 5,
       "name": "הפניה עדינה",
-      "type": "ListItem"
-    },
-    {
-      "id": 6,
-      "name": "כותר הספר",
+      "hotkey": "הצג כותרת5",
       "type": "ListItem"
     }
   ],
@@ -168,32 +172,31 @@
     },
     {
       "id": 2,
-      "name": "פתח",
+      "name": "סגור",
+      "hotkey": "סגור מסמך",
       "type": "Button"
     },
     {
       "id": 3,
-      "name": "סגור",
-      "type": "Button"
-    },
-    {
-      "id": 4,
       "name": "שינוי גודל תצוגה",
       "type": "Slider"
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "חפש",
+      "hotkey": "חלונית הניווט - חיפוש",
       "type": "SplitButton"
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "החלפה",
+      "regex": "^החלפה...$",
       "type": "Button"
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "בחר",
+      "hotkey": "בחר הכל",
       "type": "MenuItem"
     }
   ],
@@ -215,16 +218,12 @@
     },
     {
       "id": 4,
-      "name": "מברשת עיצוב",
+      "name": "נקה עיצוב",
+      "hotkey": "סגנון רגיל",
       "type": "Button"
     },
     {
       "id": 5,
-      "name": "נקה עיצוב",
-      "type": "Button"
-    },
-    {
-      "id": 6,
       "name": "שנה רישיות",
       "type": "MenuItem"
     }
@@ -233,11 +232,13 @@
     {
       "id": 1,
       "name": "הקטן כניסה",
+      "hotkey": "בטל כניסה",
       "type": "Button"
     },
     {
       "id": 2,
       "name": "הגדל כניסה",
+      "hotkey": "כניסה",
       "type": "Button"
     },
     {
@@ -253,6 +254,7 @@
     {
       "id": 5,
       "name": "מרווח בין שורות ופסקאות",
+      "hotkey": "מרווח בין פיסקאות",
       "type": "MenuItem"
     }
   ],
@@ -275,6 +277,7 @@
     {
       "id": 4,
       "name": "סגנונות",
+      "hotkey": "חלונית החלת סגנון",
       "type": "Group"
     },
     {

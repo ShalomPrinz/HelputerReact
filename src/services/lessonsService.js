@@ -29,8 +29,9 @@ export const randomLessons = () => {
   return shuffle(all);
 };
 
-export const getHotkey = (lesson) => {
-  const hotkey = hotkeys.find((h) => h.name === lesson.name) || null;
+export const getHotkey = (l) => {
+  const lessonHotkey = l.hotkey ? l.hotkey : l.name;
+  const hotkey = hotkeys.find((h) => h.name === lessonHotkey) || null;
   const description = hotkey
     ? "לחץ על מנת לעבור לקיצור המקשים"
     : "לא נמצא קיצור מקשים לפעולה זו";
