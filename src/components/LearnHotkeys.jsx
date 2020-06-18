@@ -29,7 +29,6 @@ function LearnHotkeys(props) {
     if (!toasting) {
       toast.success("Success!", {
         onClose: () => setToasting(false),
-        position: "top-center",
       });
       setToasting(true);
     }

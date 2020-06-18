@@ -2,7 +2,9 @@ import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 function AppProgressBar({ progress, undesigned }) {
-  if (undesigned) return <ProgressBar now={progress} />;
+  const variant = progress === 100 ? "success" : undefined;
+
+  if (undesigned) return <ProgressBar now={progress} variant={variant} />;
 
   if (progress === 0)
     return (
@@ -23,6 +25,7 @@ function AppProgressBar({ progress, undesigned }) {
       label={`${progress}%`}
       now={progress}
       style={{ height: 40 }}
+      variant={variant}
     />
   );
 }

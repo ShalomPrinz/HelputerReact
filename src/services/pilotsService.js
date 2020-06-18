@@ -35,6 +35,7 @@ export const finished = (topic, lesson) => {
   const pilot = pilots[topic];
   const step = 100 / pilot[0].length;
   pilot[2] += step;
+  return pilot[2];
 };
 
 export { fieldToSearch };

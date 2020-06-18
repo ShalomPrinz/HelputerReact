@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 import pilotsService, { finished } from "../services/pilotsService";
 import http from "../services/httpService";
@@ -8,20 +9,27 @@ import ListItem from "./common/ListItem";
 import Button from "./common/Button";
 
 function Pilot(props) {
-  const [index, setIndex] = useState(0);
-
   const { subject } = props.match.params;
   const [lessons, description, progress] = pilotsService[subject];
-  const size = lessons.length;
 
+  const [index, setIndex] = useState(0);
+  const [localProgress, setProgress] = useState(progress);
+
+  const size = lessons.length;
   const firstIndex = 0;
   const lastIndex = size - 1;
+  const isLastIndex = index === lastIndex;
+  const roundedProgress = Math.round(localProgress);
 
   const increaseIndex = () => setIndex(index + 1);
   const decreaseIndex = () => setIndex(index - 1);
 
   const increaseProgress = (lesson) => {
-    if (!lesson.finished) finished(subject, lesson);
+    if (!lesson.finished) {
+      const newProgress = finished(subject, lesson);
+      setProgress(newProgress);
+      if (Math.round(newProgress) === 100) toast.success("Finished pilot!");
+    }
   };
 
   const handleNext = () => {
@@ -47,7 +55,7 @@ function Pilot(props) {
       <div className="row justify-content-center text-center">
         {description}
       </div>
-      <ProgressBar progress={Math.round(progress)} />
+      <ProgressBar progress={roundedProgress} />
       <ListItem
         autolist
         className="mx-auto my-5"
@@ -57,8 +65,11 @@ function Pilot(props) {
         <LessonHotkey item={currentLesson} />
       </ListItem>
       <div className="row justify-content-center">
-        <Button disabled={index === lastIndex} onClick={handleNext}>
-          Next
+        <Button
+          disabled={isLastIndex && roundedProgress === 100}
+          onClick={handleNext}
+        >
+          {!isLastIndex ? "Next" : "Finish"}
         </Button>
         <Button disabled={index === firstIndex} onClick={handlePrevious}>
           Previous

@@ -28,7 +28,12 @@ function App() {
   return (
     <>
       <NavBar />
-      <ToastContainer limit={1} />
+      <ToastContainer
+        autoClose={2500}
+        limit={1}
+        pauseOnFocusLoss={false}
+        position="top-center"
+      />
       <main className="container">
         <div className="content">
           <Switch>
