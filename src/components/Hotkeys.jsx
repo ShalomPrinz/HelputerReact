@@ -31,7 +31,9 @@ const Hotkeys = () => {
       </div>
       <Table columns={columns} data={data} scrollable />
       {data.length === 0 && (
-        <p className="text-center">No hotkeys found matching your query.</p>
+        <p className="text-center mt-1">
+          No hotkeys found matching your query.
+        </p>
       )}
     </>
   );

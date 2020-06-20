@@ -255,6 +255,7 @@
       "id": 5,
       "name": "מרווח בין שורות ופסקאות",
       "hotkey": "מרווח בין פיסקאות",
+      "regex": "מרווח בין שורות ופיסקאות",
       "type": "MenuItem"
     }
   ],
@@ -262,28 +263,27 @@
     {
       "id": 1,
       "name": "לוח",
-      "type": "Group"
+      "regex": "הלוח של Office...",
+      "type": "Button"
     },
     {
       "id": 2,
       "name": "גופן",
-      "type": "Group"
+      "regex": "^גופן...$",
+      "type": "Button"
     },
     {
       "id": 3,
       "name": "פיסקה",
-      "type": "Group"
+      "regex": "^פיסקה...$",
+      "type": "Button"
     },
     {
       "id": 4,
       "name": "סגנונות",
       "hotkey": "חלונית החלת סגנון",
-      "type": "Group"
-    },
-    {
-      "id": 5,
-      "name": "עריכה",
-      "type": "Group"
+      "regex": "^סגנונות...$",
+      "type": "Button"
     }
   ]
 }

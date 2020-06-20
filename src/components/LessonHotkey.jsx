@@ -15,7 +15,12 @@ const LessonHotkey = ({ item: lesson, selected }) => {
     <div className="ml-2">
       <Popover description={description} item={lesson}>
         {hotkey ? (
-          <Link to={learnHotkeysUrl + "/" + hotkey.name}>{icon}</Link>
+          <Link
+            to={learnHotkeysUrl + "/" + hotkey.name}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {icon}
+          </Link>
         ) : (
           icon
         )}

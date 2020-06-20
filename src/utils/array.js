@@ -7,9 +7,13 @@ export const shuffle = (array) => {
   return array;
 };
 
-export const search = (field, list, query) =>
+export const search = (field, list, query, ignoreCase = true) =>
   query === ""
     ? list
     : list.filter((item) =>
-        item[field] ? item[field].toLowerCase().indexOf(query) !== -1 : list
+        item[field]
+          ? item[field]
+              .toLowerCase()
+              .indexOf(ignoreCase ? query.toLowerCase() : query) !== -1
+          : list
       );
