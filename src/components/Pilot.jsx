@@ -15,15 +15,6 @@ function Pilot(props) {
   const [index, setIndex] = useState(0);
   const [localProgress, setProgress] = useState(progress);
 
-  const size = lessons.length;
-  const firstIndex = 0;
-  const lastIndex = size - 1;
-  const isLastIndex = index === lastIndex;
-  const roundedProgress = Math.round(localProgress);
-
-  const increaseIndex = () => setIndex(index + 1);
-  const decreaseIndex = () => setIndex(index - 1);
-
   const increaseProgress = (lesson) => {
     if (!lesson.finished) {
       const newProgress = finished(subject, lesson);
@@ -32,13 +23,15 @@ function Pilot(props) {
     }
   };
 
+  const lastIndex = lessons.length - 1;
   const handleNext = () => {
-    if (index < lastIndex) increaseIndex();
+    if (index < lastIndex) setIndex(index + 1);
     increaseProgress(currentLesson);
   };
 
+  const firstIndex = 0;
   const handlePrevious = () => {
-    if (index > 0) decreaseIndex();
+    if (index > firstIndex) setIndex(index - 1);
   };
 
   const handleSelect = (lesson) => {
@@ -48,6 +41,7 @@ function Pilot(props) {
 
   const currentLesson = lessons[index];
   const selectedName = currentLesson.name;
+  const isLastIndex = index === lastIndex;
 
   return (
     <div className="col">
@@ -55,7 +49,7 @@ function Pilot(props) {
       <div className="row justify-content-center text-center">
         {description}
       </div>
-      <ProgressBar progress={roundedProgress} />
+      <ProgressBar progress={Math.round(localProgress)} />
       <ListItem
         autolist
         className="mx-auto my-5"
@@ -66,7 +60,7 @@ function Pilot(props) {
       </ListItem>
       <div className="row justify-content-center">
         <Button
-          disabled={isLastIndex && roundedProgress === 100}
+          disabled={isLastIndex && currentLesson.finished}
           onClick={handleNext}
         >
           {!isLastIndex ? "Next" : "Finish"}

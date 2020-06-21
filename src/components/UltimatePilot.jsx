@@ -14,20 +14,14 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   useEffect(() => setOptions(getOptions(index)), [index]);
 
   const size = lessons.length;
-  const firstIndex = 0;
   const lastIndex = size - 1;
-  const isFirstItem = index === firstIndex;
-  const isLastItem = index === lastIndex;
-
-  const increaseIndex = () => setIndex(index + 1);
-  const decreaseIndex = () => setIndex(index - 1);
-
   const handleNext = () => {
-    if (!isLastItem) increaseIndex();
+    if (index < lastIndex) setIndex(index + 1);
   };
 
+  const firstIndex = 0;
   const handlePrevious = () => {
-    if (index > 0) decreaseIndex();
+    if (index > firstIndex) setIndex(index - 1);
   };
 
   const handleOptionSelect = (l) => {
@@ -42,6 +36,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
   };
 
   const currentLesson = lessons[index];
+  const isLastIndex = index === lastIndex;
 
   return (
     <div className="col">
@@ -58,7 +53,7 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
         <LessonHotkey item={currentLesson} />
       </ListItem>
       <ul className="my-4 list-group list-group-horizontal justify-content-center">
-        {isLastItem &&
+        {isLastIndex &&
           options.map((l) => (
             <ListItem
               className="bg-light border border-secondary mx-2 rounded"
@@ -67,10 +62,10 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
               key={l.name}
             />
           ))}
-        {!isLastItem && (
+        {!isLastIndex && (
           <Button
             color="warning"
-            disabled={isLastItem}
+            disabled={isLastIndex}
             onClick={() => handleRevert(index)}
           >
             Revert
@@ -80,13 +75,13 @@ function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {
 
       <div className="row justify-content-center">
         <LessonNavigator
-          disabled={isLastItem}
+          disabled={isLastIndex}
           lesson={lessons[index + 1]}
           onClick={handleNext}
           text="Next"
         />
         <LessonNavigator
-          disabled={isFirstItem}
+          disabled={index === firstIndex}
           lesson={lessons[index - 1]}
           onClick={handlePrevious}
           text="Previous"
