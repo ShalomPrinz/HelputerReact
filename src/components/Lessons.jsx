@@ -7,7 +7,8 @@ import Kit from "./LessonsKit";
 
 let key = -1;
 const renderLesson = (subject, tuple, query, className) => {
-  let [items, description] = convertTuple(tuple, query);
+  let [items, description] = tuple;
+  items = search(fieldToSearch, items, query);
   if (items.length === 0) return null;
 
   return (
@@ -23,12 +24,6 @@ const renderLesson = (subject, tuple, query, className) => {
       }}
     />
   );
-};
-
-const convertTuple = (tuple, query) => {
-  let [items, description] = typeof tuple[1] === "string" ? tuple : [tuple];
-  items = search(fieldToSearch, items, query);
-  return [items, description];
 };
 
 function Lessons() {

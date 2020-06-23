@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Search from "./common/Search";
 import useWindowSize, { getGridSize } from "../hooks/useWindowSize";
 
+const convertTuple = (tuple) =>
+  typeof tuple[1] === "string" ? tuple : [tuple];
+
 function Kits({ lists, renderFirstKit = () => {}, renderKit }) {
   const [query, setQuery] = useState("");
 
@@ -13,10 +16,13 @@ function Kits({ lists, renderFirstKit = () => {}, renderKit }) {
 
   let found = false;
   const rendered = Object.entries(lists).map(([subject, tuple]) => {
+    tuple = convertTuple(tuple);
     const kit = renderKit(subject, tuple, query, kitWidth);
-    found = !found ? kit !== null : found;
+    found = !found ? kit != null : found;
     return kit;
   });
+
+  found = !found ? FirstKit != null : found;
 
   return (
     <>

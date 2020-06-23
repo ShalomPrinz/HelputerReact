@@ -1,13 +1,13 @@
 import { getLesson, lessonFinished, fieldToSearch } from "./lessonsService";
 
 export const ultimate = {
-  title: "Helputer Ultimate Pilot",
+  title: "הטייס של Helputer",
   description: "טייס הבית - הטייס האולטימטיבי, איתך לאורך כל הדרך",
 };
 
 const references = [
   {
-    title: "Basic Headline",
+    title: "כותרת בסיסית",
     description: "כותרת מודגשת במרכז העמוד בגודל 20",
     lessons: ["TextDesign:1", "TextDesign:5", "PageBasics:2"],
     progress: 0,

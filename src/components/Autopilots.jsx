@@ -7,20 +7,25 @@ import LessonsKit from "./LessonsKit";
 
 let key = -1;
 
-const renderUltimate = (query, className) => (
-  <LessonsKit
-    className={className}
-    description={ultimate.description}
-    exactUrl
-    onItemSelect={() => {}}
-    onKitSelectUrl={ultimatePilotUrl}
-    subject={ultimate.title}
-  />
-);
+const renderUltimate = (query, className) => {
+  const { title, description } = ultimate;
+  if (!isMatch(title, description, query)) return null;
+
+  return (
+    <LessonsKit
+      className={className}
+      description={description}
+      exactUrl
+      onItemSelect={() => {}}
+      onKitSelectUrl={ultimatePilotUrl}
+      subject={title}
+    />
+  );
+};
 
 const renderPilot = (subject, tuple, query, className) => {
-  let [items, description] = convertTuple(tuple);
-  if (items.length === 0) return null;
+  const [items, description] = tuple;
+  if (!isMatch(subject, description, query)) return null;
 
   return (
     <LessonsKit
@@ -38,9 +43,11 @@ const renderPilot = (subject, tuple, query, className) => {
   );
 };
 
-const convertTuple = (tuple) => {
-  let [items, description] = typeof tuple[1] === "string" ? tuple : [tuple];
-  return [items, description];
+const isMatch = (subject, description, query) => {
+  query = query.toLowerCase();
+  subject = subject.toLowerCase();
+  description = description.toLowerCase();
+  return description.includes(query) || subject.includes(query);
 };
 
 function Autopilots() {
