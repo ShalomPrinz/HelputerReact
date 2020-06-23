@@ -1,33 +1,56 @@
 import React from "react";
 
 import { autopilotUrl, ultimatePilotUrl } from "../constants";
-import useWindowSize, { getGridSize } from "../hooks/useWindowSize";
 import pilots, { ultimate } from "../services/pilotsService";
 import Kits from "./Kits";
 import LessonsKit from "./LessonsKit";
 
-function Lessons() {
-  const size = useWindowSize();
+let key = -1;
 
-  const ultimatePilotKit = (
-    <LessonsKit
-      className={getGridSize(size[0])}
-      description={ultimate.description}
-      exactUrl
-      onItemSelect={() => {}}
-      onKitSelectUrl={ultimatePilotUrl}
-      subject={ultimate.title}
-    />
-  );
+const renderUltimate = (query, className) => (
+  <LessonsKit
+    className={className}
+    description={ultimate.description}
+    exactUrl
+    onItemSelect={() => {}}
+    onKitSelectUrl={ultimatePilotUrl}
+    subject={ultimate.title}
+  />
+);
+
+const renderPilot = (subject, tuple, query, className) => {
+  let [items, description] = convertTuple(tuple);
+  if (items.length === 0) return null;
 
   return (
-    <Kits
-      FirstKit={ultimatePilotKit}
+    <LessonsKit
       hotkeys
+      key={++key}
+      {...{
+        className,
+        description,
+        items,
+        onKitSelectUrl: autopilotUrl,
+        query,
+        subject,
+      }}
+    />
+  );
+};
+
+const convertTuple = (tuple) => {
+  let [items, description] = typeof tuple[1] === "string" ? tuple : [tuple];
+  return [items, description];
+};
+
+function Autopilots() {
+  return (
+    <Kits
       lists={pilots}
-      onKitSelectUrl={autopilotUrl}
+      renderFirstKit={renderUltimate}
+      renderKit={renderPilot}
     />
   );
 }
 
-export default Lessons;
+export default Autopilots;

@@ -1,9 +1,10 @@
 import React from "react";
 
+import pilots from "../services/pilotsService";
+import httpService from "../services/httpService";
 import ConditionalLink from "./common/ConditionalLink";
 import ListGroup from "./common/ListGroup";
 import ProgressBar from "./common/ProgressBar";
-import pilots from "../services/pilotsService";
 import LessonHotkey from "./LessonHotkey";
 
 function LessonsKit({
@@ -12,7 +13,7 @@ function LessonsKit({
   description,
   exactUrl,
   items = [],
-  onItemSelect,
+  onItemSelect = (item) => httpService.paint(item),
   onKitSelectUrl,
   query,
   subject,
