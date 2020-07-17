@@ -23,10 +23,12 @@ export const randomLesson = () => {
 
 export const randomLessons = () => {
   let all = [];
-  Object.entries(lessonsLists).forEach(
-    ([subject, list]) => (all = all.concat(list))
-  );
-  return shuffle(all);
+  Object.entries(lessonsLists).forEach(([category, subjects]) => {
+    Object.entries(subjects).forEach(
+      ([subject, list]) => (all = all.concat(list))
+    );
+  });
+  return all;
 };
 
 export const getHotkey = (l) => {
@@ -39,8 +41,8 @@ export const getHotkey = (l) => {
   return { hotkey, description };
 };
 
-export const getLesson = (topic, id) =>
-  lessonsLists[topicDictionary[topic]].find((l) => l.id === id);
+export const getLesson = (topic, id, tab = "בית") =>
+  lessonsLists[tab][topicDictionary[topic]].find((l) => l.id === id);
 
 export const lessonFinished = (lesson) => (lesson.finished = true);
 

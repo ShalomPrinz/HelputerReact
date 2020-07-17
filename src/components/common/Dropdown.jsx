@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function AppDropdown({ className, headline, onSelect, options }) {
   if (!headline || !options) return null;
 
   let key = -1;
-  options = options.map((o) => ({ ...o, key: ++key }));
+  options = options.map((o) => ({ name: o.name || o, key: ++key }));
 
   return (
     <Dropdown className={className} onSelect={onSelect}>
@@ -22,5 +23,10 @@ function AppDropdown({ className, headline, onSelect, options }) {
     </Dropdown>
   );
 }
+
+AppDropdown.propTypes = {
+  headline: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+};
 
 export default AppDropdown;

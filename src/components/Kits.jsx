@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import Search from "./common/Search";
 import useWindowSize, { getGridSize } from "../hooks/useWindowSize";
@@ -37,5 +38,10 @@ function Kits({ lists, renderFirstKit = () => {}, renderKit }) {
     </>
   );
 }
+
+Kits.propTypes = {
+  lists: PropTypes.object.isRequired,
+  renderKit: PropTypes.func.isRequired,
+};
 
 export default Kits;

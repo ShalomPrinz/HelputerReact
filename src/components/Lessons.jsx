@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import lessonsLists, { fieldToSearch } from "../services/lessonsService";
 import { search } from "../utils/array";
+import Dropdown from "./common/Dropdown";
 import Kits from "./Kits";
 import Kit from "./LessonsKit";
 
@@ -26,8 +27,23 @@ const renderLesson = (subject, tuple, query, className) => {
   );
 };
 
+const keys = Object.keys(lessonsLists);
 function Lessons() {
-  return <Kits lists={lessonsLists} renderKit={renderLesson} />;
+  const [tab, setTab] = useState("בית");
+
+  const currentLists = lessonsLists[tab];
+
+  return (
+    <>
+      <Dropdown
+        className="my-2"
+        headline={tab}
+        onSelect={(key) => setTab(keys[key])}
+        options={keys}
+      />
+      <Kits lists={currentLists} renderKit={renderLesson} />;
+    </>
+  );
 }
 
 export default Lessons;
