@@ -9,13 +9,17 @@ function AppDropdown({ className, headline, onSelect, options }) {
   options = options.map((o) => ({ name: o.name || o, key: ++key }));
 
   return (
-    <Dropdown className={className} onSelect={onSelect}>
+    <Dropdown alignRight className={className} onSelect={onSelect}>
       <Dropdown.Toggle>{headline}</Dropdown.Toggle>
 
       <Dropdown.Menu>
         {options &&
           options.map((option) => (
-            <Dropdown.Item key={option.key} eventKey={option.key}>
+            <Dropdown.Item
+              className="text-center"
+              key={option.key}
+              eventKey={option.key}
+            >
               {option.name}
             </Dropdown.Item>
           ))}

@@ -33,16 +33,21 @@ function Lessons() {
 
   const currentLists = lessonsLists[tab];
 
+  const dropdown = (
+    <Dropdown
+      className="ml-3 my-3 dropdown-menu-left"
+      headline={tab}
+      onSelect={(key) => setTab(keys[key])}
+      options={keys}
+    />
+  );
+
   return (
-    <>
-      <Dropdown
-        className="my-2"
-        headline={tab}
-        onSelect={(key) => setTab(keys[key])}
-        options={keys}
-      />
-      <Kits lists={currentLists} renderKit={renderLesson} />;
-    </>
+    <Kits
+      DropdownFilter={dropdown}
+      lists={currentLists}
+      renderKit={renderLesson}
+    />
   );
 }
 

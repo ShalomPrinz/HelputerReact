@@ -7,7 +7,7 @@ import useWindowSize, { getGridSize } from "../hooks/useWindowSize";
 const convertTuple = (tuple) =>
   typeof tuple[1] === "string" ? tuple : [tuple];
 
-function Kits({ lists, renderFirstKit = () => {}, renderKit }) {
+function Kits({ DropdownFilter, lists, renderFirstKit = () => {}, renderKit }) {
   const [query, setQuery] = useState("");
 
   const size = useWindowSize();
@@ -27,8 +27,9 @@ function Kits({ lists, renderFirstKit = () => {}, renderKit }) {
 
   return (
     <>
-      <div className="mx-auto w-50">
+      <div className="d-flex mx-auto w-50">
         <Search value={query} onChange={(q) => setQuery(q)} />
+        {DropdownFilter}
       </div>
       <div className="row justify-content-center">
         {FirstKit}
