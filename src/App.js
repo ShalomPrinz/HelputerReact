@@ -12,6 +12,7 @@ import Autopilots from "./components/Autopilots";
 import Pilot from "./components/Pilot";
 import UltimatePilotContainer from "./components/UltimatePilotContainer";
 import LearnHotkeys from "./components/LearnHotkeys";
+import Guide from "./components/Guide";
 
 import {
   headUrl,
@@ -22,6 +23,7 @@ import {
   autopilotUrl,
   ultimatePilotUrl,
   learnHotkeysUrl,
+  guideUrl,
 } from "./constants";
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
       <main className="container">
         <div className="content">
           <Switch>
+            <Route path={guideUrl} component={Guide} />
             <Route path={lessonsUrl} component={Lessons} />
             <Route path={learnHotkeysUrl + "/:name"} component={LearnHotkeys} />
             <Route path={learnHotkeysUrl} component={LearnHotkeys} />

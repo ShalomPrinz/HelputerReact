@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/NavBar";
 import Nav from "react-bootstrap/Nav";
 
 import {
+  guideUrl,
   headUrl,
   lessonsUrl,
   hotkeysUrl,
@@ -29,6 +30,9 @@ function AppNavBar(props) {
             if (expanded) setExpanded(!expanded);
           }}
         >
+          <NavLink className="nav-link" to={guideUrl}>
+            Guide
+          </NavLink>
           <NavLink className="nav-link" to={lessonsUrl}>
             Lessons
           </NavLink>

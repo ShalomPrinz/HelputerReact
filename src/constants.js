@@ -1,6 +1,7 @@
 export const remoteUrl = "http://localhost:8000";
 export const baseUrl = "http://localhost:3000";
 export const headUrl = "/";
+export const guideUrl = headUrl + "guide";
 export const lessonsUrl = headUrl + "lessons";
 export const hotkeysUrl = headUrl + "hotkeys";
 export const learnHotkeysUrl = hotkeysUrl + "-learn";

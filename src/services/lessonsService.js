@@ -28,7 +28,7 @@ export const randomLessons = () => {
       ([subject, list]) => (all = all.concat(list))
     );
   });
-  return all;
+  return shuffle(all);
 };
 
 export const getHotkey = (l) => {
