@@ -5,14 +5,15 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 import NavBar from "./components/NavBar";
-import Lessons from "./components/Lessons";
-import NotFound from "./components/NotFound";
-import Hotkeys from "./components/Hotkeys";
-import Autopilots from "./components/Autopilots";
-import Pilot from "./components/Pilot";
-import UltimatePilotContainer from "./components/UltimatePilotContainer";
-import LearnHotkeys from "./components/LearnHotkeys";
-import Guide from "./components/Guide";
+
+import Lessons from "./components/screens/Lessons";
+import NotFound from "./components/screens/NotFound";
+import Hotkeys from "./components/screens/Hotkeys";
+import Autopilots from "./components/screens/Autopilots";
+import Pilot from "./components/screens/Pilot";
+import UltimatePilotContainer from "./components/screens/UltimatePilotContainer";
+import LearnHotkeys from "./components/screens/LearnHotkeys";
+import Guide from "./components/screens/Guide";
 
 import {
   headUrl,

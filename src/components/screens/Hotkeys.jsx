@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import hotkeys, { fieldToSearch } from "../services/hotkeysService";
-import Table from "./common/Table";
-import Search from "./common/Search";
-import { search } from "../utils/array";
-import { learnHotkeysUrl } from "../constants";
+import hotkeys, { fieldToSearch } from "../../services/hotkeysService";
+import Table from "../common/Table";
+import Search from "../common/Search";
+import { search } from "../../utils/array";
+import { learnHotkeysUrl } from "../../constants";
 
 const Hotkeys = () => {
   const [query, setQuery] = useState("");

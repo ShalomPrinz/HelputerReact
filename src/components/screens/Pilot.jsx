@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-import pilotsService, { finished } from "../services/pilotsService";
-import http from "../services/httpService";
-import LessonHotkey from "./LessonHotkey";
-import ProgressBar from "./common/ProgressBar";
-import ListItem from "./common/ListItem";
-import Button from "./common/Button";
+import pilotsService, { finished } from "../../services/pilotsService";
+import http from "../../services/httpService";
+import LessonHotkey from "../LessonHotkey";
+import ProgressBar from "../common/ProgressBar";
+import ListItem from "../common/ListItem";
+import Button from "../common/Button";
 
 function Pilot(props) {
   const { subject } = props.match.params;

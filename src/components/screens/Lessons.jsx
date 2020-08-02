@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import lessonsLists, { fieldToSearch } from "../services/lessonsService";
-import { search } from "../utils/array";
-import Dropdown from "./common/Dropdown";
-import Kits from "./Kits";
-import Kit from "./LessonsKit";
+import lessonsLists, { fieldToSearch } from "../../services/lessonsService";
+import { search } from "../../utils/array";
+import Dropdown from "../common/Dropdown";
+import Kits from "../Kits";
+import Kit from "../LessonsKit";
 
 let key = -1;
 const renderLesson = (subject, tuple, query, className) => {

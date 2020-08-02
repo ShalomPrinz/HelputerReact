@@ -4,14 +4,14 @@ import { toast } from "react-toastify";
 import KeyBoard, {
   isValidKeysString,
   notValidKeyMessage,
-} from "./common/Keyboard";
-import ListGroup from "./common/ListGroup";
-import Search from "./common/Search";
-import { search } from "../utils/array";
+} from "../common/Keyboard";
+import ListGroup from "../common/ListGroup";
+import Search from "../common/Search";
+import { search } from "../../utils/array";
 import hotkeys, {
   explanation,
   fieldToSearch,
-} from "../services/hotkeysService";
+} from "../../services/hotkeysService";
 
 function LearnHotkeys(props) {
   const selectedName = props.match.params.name;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import { randomLessons } from "../services/lessonsService";
-import UltimatePilot from "./UltimatePilot";
+import { randomLessons } from "../../services/lessonsService";
+import UltimatePilot from "../UltimatePilot";
 
 let all = randomLessons();
 

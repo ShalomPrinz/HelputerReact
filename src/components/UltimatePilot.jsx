@@ -4,7 +4,7 @@ import { ultimate } from "../services/pilotsService";
 import http from "../services/httpService";
 import ListItem from "./common/ListItem";
 import Button from "./common/Button";
-import { getOptions } from "./UltimatePilotContainer";
+import { getOptions } from "./screens/UltimatePilotContainer";
 import LessonHotkey from "./LessonHotkey";
 
 function UltimatePilot({ lessons, nextLessonChosen, removeChoices }) {

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { autopilotUrl, ultimatePilotUrl } from "../constants";
-import pilots, { ultimate } from "../services/pilotsService";
-import Kits from "./Kits";
-import LessonsKit from "./LessonsKit";
+import { autopilotUrl, ultimatePilotUrl } from "../../constants";
+import pilots, { ultimate } from "../../services/pilotsService";
+import Kits from "../Kits";
+import LessonsKit from "../LessonsKit";
 
 let key = -1;
 
